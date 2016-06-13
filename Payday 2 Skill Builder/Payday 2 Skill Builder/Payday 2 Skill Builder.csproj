@@ -22,24 +22,24 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="src\ui\app.css" />
     <Content Include="index.html" />
-    <Content Include="web.config" />
+    <Content Include="styles.css" />
+    <Content Include="systemjs.config.js" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="src\engine\effect.ts" />
-    <TypeScriptCompile Include="src\ui\app.ts" />
+    <TypeScriptCompile Include="app\app.component.ts" />
+    <TypeScriptCompile Include="app\hero-detail.component.ts" />
+    <TypeScriptCompile Include="app\hero.service.ts" />
+    <TypeScriptCompile Include="app\hero.ts" />
+    <TypeScriptCompile Include="app\main.ts" />
+    <TypeScriptCompile Include="app\mock-heroes.ts" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="web.Debug.config">
-      <DependentUpon>web.config</DependentUpon>
-    </None>
-    <None Include="web.Release.config">
-      <DependentUpon>web.config</DependentUpon>
-    </None>
+    <Content Include="package.json" />
+    <Content Include="tsconfig.json" />
+    <Content Include="typings.json" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="src\engine\effects\" />
     <Folder Include="test\" />
   </ItemGroup>
   <PropertyGroup>
