@@ -9,17 +9,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var Armor = (function () {
-    function Armor() {
+var Armor_1 = require('./Armor');
+var ArmorFactory = (function () {
+    function ArmorFactory() {
     }
-    Armor = __decorate([
-        core_1.Component({
-            selector: 'armor',
-            templateUrl: './armor.component.html'
-        }), 
+    ArmorFactory.prototype.getArmors = function () { return ARMORS; };
+    ArmorFactory = __decorate([
+        core_1.Injectable(), 
         __metadata('design:paramtypes', [])
-    ], Armor);
-    return Armor;
+    ], ArmorFactory);
+    return ArmorFactory;
 }());
-exports.Armor = Armor;
-//# sourceMappingURL=armor.component.js.map
+exports.ArmorFactory = ArmorFactory;
+var ARMORS = [
+    new Armor_1.Armor("Suit"),
+    new Armor_1.Armor("Vest")
+];
+//# sourceMappingURL=Armor.factory.js.map

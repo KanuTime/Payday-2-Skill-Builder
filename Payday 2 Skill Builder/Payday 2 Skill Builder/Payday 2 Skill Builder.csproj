@@ -22,20 +22,23 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="app\armors\armors.component.html" />
-    <Content Include="app\armors\armor\armor.component.html" />
+    <Content Include="app\armorset\ArmorSet.component.html" />
+    <Content Include="app\armorset\armor\Armor.component.html" />
     <Content Include="index.html" />
     <Content Include="styles.css" />
     <Content Include="systemjs.config.js" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="app\app.component.ts" />
-    <TypeScriptCompile Include="app\armors\armors.component.ts" />
-    <TypeScriptCompile Include="app\armors\armors.service.ts" />
-    <TypeScriptCompile Include="app\armors\armor\armor.component.ts" />
+    <TypeScriptCompile Include="app\armorset\ArmorSet.component.ts" />
+    <TypeScriptCompile Include="app\armorset\ArmorSet.ts" />
+    <TypeScriptCompile Include="app\armorset\armor\Armor.ts" />
+    <TypeScriptCompile Include="app\armorset\armor\Armor.service.ts" />
     <TypeScriptCompile Include="app\hero-detail.component.ts" />
     <TypeScriptCompile Include="app\hero.service.ts" />
     <TypeScriptCompile Include="app\hero.ts" />
+    <TypeScriptCompile Include="app\engine\lib.ts" />
+    <TypeScriptCompile Include="app\engine\Mock.ts" />
     <TypeScriptCompile Include="app\main.ts" />
     <TypeScriptCompile Include="app\mock-heroes.ts" />
   </ItemGroup>

@@ -4,6 +4,10 @@ import { Hero } from './hero';
 import { HeroDetailComponent } from './hero-detail.component';
 import { HeroService } from './hero.service';
 
+import { ArmorSet } from './armorset/ArmorSet';
+import { ArmorSetComponent } from './armorset/ArmorSet.component';
+import { ArmorService } from './armorset/armor/Armor.service';
+
 @Component({
     selector: 'my-app',
     template: `
@@ -17,6 +21,7 @@ import { HeroService } from './hero.service';
       </li>
     </ul>
     <my-hero-detail [hero]="selectedHero"></my-hero-detail>
+    <ArmorSet [armors]="armorService"></ArmorSet>
   `,
     styles: [`
     .selected {
@@ -67,21 +72,24 @@ import { HeroService } from './hero.service';
       border-radius: 4px 0 0 4px;
     }
   `],
-    directives: [HeroDetailComponent],
-    providers: [HeroService] 
+    directives: [HeroDetailComponent, ArmorSetComponent],
+    providers: [HeroService, ArmorService] 
 })
 export class AppComponent implements OnInit {
 
     ngOnInit() {
-        this.getHeroes();
+        this.heroService.getHeroes().then(heroes => this.heroes = heroes);
     }
 
-    constructor(private heroService: HeroService) { }
+    constructor(private heroService: HeroService, private armorService: ArmorService) {
+        //this.armorSet = new ArmorSet(armorSupplier.getArmors());
+    }
 
     title = 'Tour of Heroes';
     heroes : Hero[];
     selectedHero: Hero;
+    armorSet: ArmorSet;
     onSelect(hero: Hero) { this.selectedHero = hero; }
-
-    getHeroes() { this.heroService.getHeroes().then(heroes => this.heroes = heroes); }
+    
+    
 }
