@@ -1,25 +1,35 @@
-//import { ControlValueAccessor } from '@angular/common';
 "use strict";
 var Selection = (function () {
-    function Selection() {
+    function Selection(as, select) {
+        this.as = as;
+        this.select = select ? select : as[0];
     }
-    //private onChange: (A) => void;
-    /* constructor(elements: A[], selected?: A) {
-         this.as = elements;
-         this.select = selected;
-     }*/
-    Selection.prototype.setElements = function (elements) {
-        this.as = elements;
+    Object.defineProperty(Selection.prototype, "selected", {
+        get: function () {
+            return this.select;
+        },
+        set: function (selected) {
+            this.select = selected;
+            this.onChange(selected);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Selection.prototype, "elements", {
+        get: function () {
+            return this.as;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Selection.prototype.writeValue = function (value) {
+        this.select = value;
     };
-    Selection.prototype.getSelected = function () {
-        return this.select;
+    Selection.prototype.registerOnChange = function (fn) {
+        this.onChange = fn;
     };
-    Selection.prototype.setSelected = function (selected) {
-        this.select = selected;
-        //this.onChange(selected);
-    };
-    Selection.prototype.elements = function () {
-        return this.as;
+    Selection.prototype.registerOnTouched = function (fn) {
+        // you can't touch this
     };
     return Selection;
 }());

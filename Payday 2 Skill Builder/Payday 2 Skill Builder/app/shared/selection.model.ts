@@ -1,34 +1,30 @@
-﻿//import { ControlValueAccessor } from '@angular/common';
+﻿import { ControlValueAccessor } from '@angular/common';
 
-export class Selection<A>  {
+export class Selection<A> implements ControlValueAccessor {
 
     private as: A[];
-    private select: A; 
+    private select: A;
 
-    //private onChange: (A) => void;
+    private onChange: (A) => void;
 
-   /* constructor(elements: A[], selected?: A) {
-        this.as = elements;
-        this.select = selected;
-    }*/
-
-    setElements(elements: A[]) {
-        this.as = elements;
+    constructor(as: A[], select?: A) {
+        this.as = as;
+        this.select = select ? select : as[0];
     }
-
-    getSelected(): A {
+    
+    get selected(): A {
         return this.select;
     }
 
-    setSelected(selected: A) {
+    set selected(selected: A) {
         this.select = selected;
-        //this.onChange(selected);
+        this.onChange(selected);
     }
 
-    elements(): A[] {
+    get elements(): A[] {
         return this.as;
     }
-    /*
+    
     writeValue(value: A) {
         this.select = value;
     }
@@ -39,5 +35,5 @@ export class Selection<A>  {
 
     registerOnTouched(fn: (A) => void) {
         // you can't touch this
-    }*/
+    }
 }

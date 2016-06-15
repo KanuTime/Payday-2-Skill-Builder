@@ -1,19 +1,18 @@
 ﻿import { Component } from '@angular/core';
 
-import { Armor } from '../';
-import { Selection, Provider } from '../..';
+import { Armor } from '../shared/armor.model';
+import { Selection } from '../../shared/selection.model';
+import { Provider } from '../../shared/provider.interface';
 
 @Component({
     selector: 'armor-selection',
     templateUrl: 'armor-selection.component.html',
-    providers: [],
     moduleId: module.id
 })
-export class ArmorSelectionComponent {//extends Selection<Armor> {
-    
+export class ArmorSelectionComponent extends Selection<Armor> {
+        
     constructor(armorProvider: Provider<Armor[]>) {
-        //super();
-        //super(armorProvider.get());
+        super(armorProvider.get());
     }
 
 }
