@@ -12,30 +12,38 @@ var core_1 = require('@angular/core');
 var Selection = (function () {
     function Selection(as) {
         this.as = as;
-        this.onSelection = new core_1.EventEmitter();
+        this._onSelection = new core_1.EventEmitter();
     }
     Selection.prototype.ngOnInit = function () {
-        this._selected = this.initiallySelected;
-        this.initiallySelected = undefined;
+        this._selected = this._initiallySelected;
+        this._initiallySelected = undefined;
     };
-    Selection.prototype.selected = function () {
-        return this._selected;
-    };
+    Object.defineProperty(Selection.prototype, "selected", {
+        get: function () {
+            return this._selected;
+        },
+        enumerable: true,
+        configurable: true
+    });
     Selection.prototype.select = function (selected) {
         this._selected = selected;
-        this.onSelection.emit(this._selected);
+        this._onSelection.emit(this._selected);
     };
-    Selection.prototype.elements = function () {
-        return this.as;
-    };
+    Object.defineProperty(Selection.prototype, "elements", {
+        get: function () {
+            return this.as;
+        },
+        enumerable: true,
+        configurable: true
+    });
     __decorate([
         core_1.Input('selected'), 
         __metadata('design:type', Object)
-    ], Selection.prototype, "initiallySelected", void 0);
+    ], Selection.prototype, "_initiallySelected", void 0);
     __decorate([
         core_1.Output('selection'), 
         __metadata('design:type', Object)
-    ], Selection.prototype, "onSelection", void 0);
+    ], Selection.prototype, "_onSelection", void 0);
     return Selection;
 }());
 exports.Selection = Selection;

@@ -41,13 +41,17 @@
     <TypeScriptCompile Include="app\armor\index.ts" />
     <TypeScriptCompile Include="app\armor\shared\armor.provider.ts" />
     <TypeScriptCompile Include="app\armor\shared\index.ts" />
+    <TypeScriptCompile Include="app\effect\efficacious.model.ts" />
+    <TypeScriptCompile Include="app\effect\index.ts" />
     <TypeScriptCompile Include="app\hero-detail.component.ts" />
     <TypeScriptCompile Include="app\hero.service.ts" />
     <TypeScriptCompile Include="app\hero.ts" />
     <TypeScriptCompile Include="app\index.ts" />
     <TypeScriptCompile Include="app\main.ts" />
     <TypeScriptCompile Include="app\mock-heroes.ts" />
-    <TypeScriptCompile Include="app\player\properties.enum.ts" />
+    <TypeScriptCompile Include="app\effect\property.model.ts" />
+    <TypeScriptCompile Include="app\effect\effect.model.ts" />
+    <TypeScriptCompile Include="app\effect\effect.service.ts" />
     <TypeScriptCompile Include="app\shared\index.ts" />
     <TypeScriptCompile Include="app\shared\selection.model.ts" />
     <TypeScriptCompile Include="app\shared\provider.interface.ts" />
@@ -59,6 +63,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="app\armor\armor-preview\" />
+    <Folder Include="app\player\" />
+    <Folder Include="assets\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">12.0</VisualStudioVersion>

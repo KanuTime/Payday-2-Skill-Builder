@@ -12,3 +12,4 @@
 <armor-selection [selected]="selectedArmor" 
                  (selection)="setSelectedArmor($event)">
 </armor-selection>
+Combined Effects: {{effects(selectedArmor) | json}}

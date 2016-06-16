@@ -4,28 +4,28 @@ export class Selection<A> implements OnInit {
     
     private _selected: A;
 
-    @Input('selected') initiallySelected: A;
-    @Output('selection') onSelection = new EventEmitter();
+    @Input('selected') _initiallySelected: A;
+    @Output('selection') _onSelection = new EventEmitter<A>();
 
     constructor(
         private as: A[]
     ){ }
 
     ngOnInit() {
-        this._selected = this.initiallySelected;
-        this.initiallySelected = undefined;
+        this._selected = this._initiallySelected;
+        this._initiallySelected = undefined;
     }
     
-    selected(): A {
+    get selected(): A {
         return this._selected;
     }
 
     select(selected: A) {
         this._selected = selected;
-        this.onSelection.emit(this._selected);
+        this._onSelection.emit(this._selected);
     }
 
-    elements(): A[] {
+    get elements(): A[] {
         return this.as;
     }
 }

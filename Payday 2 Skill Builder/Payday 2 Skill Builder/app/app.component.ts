@@ -8,12 +8,16 @@ import { Armor } from './armor';
 import { ArmorProvider } from './armor/shared/armor.provider';
 import { ArmorSelectionComponent } from './armor/armor-selection/armor-selection.component';
 
+import { EffectService } from './effect/effect.service';
+import { Effect } from './effect/effect.model';
+import { Property } from './effect/property.model';
+
 @Component({
     selector: 'my-app',
     templateUrl: 'app.component.html',
     styleUrls: ['app.component.css'],
     directives: [HeroDetailComponent, ArmorSelectionComponent],
-    providers: [HeroService, ArmorProvider],
+    providers: [HeroService, ArmorProvider, EffectService],
     moduleId: module.id,
 })
 export class AppComponent implements OnInit {
@@ -22,14 +26,22 @@ export class AppComponent implements OnInit {
         this.heroService.getHeroes().then(heroes => this.heroes = heroes);
     }
 
-    constructor(private heroService: HeroService, private armorProvider: ArmorProvider) {
-        
-    }
+    constructor(
+        private heroService: HeroService,
+        private armorProvider: ArmorProvider,
+        private effectService: EffectService
+    ) { }
 
     title = 'Tour of Heroes';
     heroes : Hero[];
     selectedHero: Hero;
     selectedArmor: Armor = this.armorProvider.get()[0];
+
+    skills = [ new Effect(Property.ARMOR, 50, 10) ];
+    effects(armor: Armor) {
+        return this.effectService.reduceValues(
+            this.effectService.combineEffects(armor.allEffects().concat(this.skills)));
+    }
 
     onSelect(hero: Hero) { this.selectedHero = hero; }
 

@@ -1,6 +1,6 @@
-﻿<h3>Selected Armor: {{selected().name}}</h3>
+﻿<h3>Selected Armor: {{selected.name}}</h3>
 <ul>
-    <li *ngFor="let armor of elements()">
-        <input type="button" value="{{armor.name}}" (click)="select(armor)" width="200"/>
+    <li *ngFor="let armor of elements">
+        <input type="button" value="{{armor.name}}" (click)="select(armor)" style="width: 200"/>
     </li>
 </ul>

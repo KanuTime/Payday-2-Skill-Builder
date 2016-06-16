@@ -13,16 +13,24 @@ var hero_detail_component_1 = require('./hero-detail.component');
 var hero_service_1 = require('./hero.service');
 var armor_provider_1 = require('./armor/shared/armor.provider');
 var armor_selection_component_1 = require('./armor/armor-selection/armor-selection.component');
+var effect_service_1 = require('./effect/effect.service');
+var effect_model_1 = require('./effect/effect.model');
+var property_model_1 = require('./effect/property.model');
 var AppComponent = (function () {
-    function AppComponent(heroService, armorProvider) {
+    function AppComponent(heroService, armorProvider, effectService) {
         this.heroService = heroService;
         this.armorProvider = armorProvider;
+        this.effectService = effectService;
         this.title = 'Tour of Heroes';
         this.selectedArmor = this.armorProvider.get()[0];
+        this.skills = [new effect_model_1.Effect(property_model_1.Property.ARMOR, 50, 10)];
     }
     AppComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.heroService.getHeroes().then(function (heroes) { return _this.heroes = heroes; });
+    };
+    AppComponent.prototype.effects = function (armor) {
+        return this.effectService.reduceValues(this.effectService.combineEffects(armor.allEffects().concat(this.skills)));
     };
     AppComponent.prototype.onSelect = function (hero) { this.selectedHero = hero; };
     AppComponent.prototype.setSelectedArmor = function (armor) {
@@ -34,10 +42,10 @@ var AppComponent = (function () {
             templateUrl: 'app.component.html',
             styleUrls: ['app.component.css'],
             directives: [hero_detail_component_1.HeroDetailComponent, armor_selection_component_1.ArmorSelectionComponent],
-            providers: [hero_service_1.HeroService, armor_provider_1.ArmorProvider],
+            providers: [hero_service_1.HeroService, armor_provider_1.ArmorProvider, effect_service_1.EffectService],
             moduleId: module.id,
         }), 
-        __metadata('design:paramtypes', [hero_service_1.HeroService, armor_provider_1.ArmorProvider])
+        __metadata('design:paramtypes', [hero_service_1.HeroService, armor_provider_1.ArmorProvider, effect_service_1.EffectService])
     ], AppComponent);
     return AppComponent;
 }());

@@ -13,9 +13,7 @@ var armor_model_1 = require('./armor.model');
 var ArmorProvider = (function () {
     function ArmorProvider() {
     }
-    ArmorProvider.prototype.get = function () {
-        return ARMORS;
-    };
+    ArmorProvider.prototype.get = function () { return ARMORS; };
     ArmorProvider = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [])
@@ -23,8 +21,19 @@ var ArmorProvider = (function () {
     return ArmorProvider;
 }());
 exports.ArmorProvider = ArmorProvider;
+var TWO_PIECE_SUIT = new armor_model_1.Armor("Two-piece Suit", 20, 30, 37, 10, 11, 21, 230, 3);
+var LIGHTWEIGHT_BALLISTIC_VEST = new armor_model_1.Armor("Lightweight Ballistic Vest", 30, 26, 36, -20, 11, 20, 230, 3);
+var BALLISTIC_VEST = new armor_model_1.Armor("Ballistic Vest", 40, 23, 35, -25, 12, 19, 230, 3);
+var HEAVY_BALLISTIC_VEST = new armor_model_1.Armor("Heavy Ballistic Vest", 50, 21, 33, -30, 13, 18, 230, 3);
+var FLAK_JACKET = new armor_model_1.Armor("Flak Jacket", 70, 18, 26, -35, 14, 17, 230, 3);
+var COMBINED_TACTICAL_VEST = new armor_model_1.Armor("Combined Tactical Vest", 90, 12, 23, -40, 16, 16, 230, 3);
+var IMPROVED_COMBINED_TACTICAL_VEST = new armor_model_1.Armor("Improved Combined Tactical Vest", 170, 1, 20, -50, 22, 14, 230, 3);
 var ARMORS = [
-    new armor_model_1.Armor("Suit"),
-    new armor_model_1.Armor("Vest")
+    TWO_PIECE_SUIT,
+    LIGHTWEIGHT_BALLISTIC_VEST,
+    BALLISTIC_VEST,
+    HEAVY_BALLISTIC_VEST,
+    FLAK_JACKET,
+    COMBINED_TACTICAL_VEST
 ];
 //# sourceMappingURL=armor.provider.js.map
