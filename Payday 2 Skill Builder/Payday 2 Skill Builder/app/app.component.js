@@ -14,16 +14,21 @@ var hero_service_1 = require('./hero.service');
 var armor_provider_1 = require('./armor/shared/armor.provider');
 var armor_selection_component_1 = require('./armor/armor-selection/armor-selection.component');
 var AppComponent = (function () {
-    function AppComponent(heroService) {
+    function AppComponent(heroService, armorProvider) {
         this.heroService = heroService;
+        this.armorProvider = armorProvider;
         this.title = 'Tour of Heroes';
-        this.selectedArmor = new armor_provider_1.ArmorProvider().get()[0];
+        this.selectedArmor = this.armorProvider.get()[1];
     }
     AppComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.heroService.getHeroes().then(function (heroes) { return _this.heroes = heroes; });
     };
     AppComponent.prototype.onSelect = function (hero) { this.selectedHero = hero; };
+    AppComponent.prototype.setSelectedArmor = function (armor) {
+        alert(armor);
+        this.selectedArmor = armor;
+    };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
@@ -33,7 +38,7 @@ var AppComponent = (function () {
             providers: [hero_service_1.HeroService, armor_provider_1.ArmorProvider],
             moduleId: module.id,
         }), 
-        __metadata('design:paramtypes', [hero_service_1.HeroService])
+        __metadata('design:paramtypes', [hero_service_1.HeroService, armor_provider_1.ArmorProvider])
     ], AppComponent);
     return AppComponent;
 }());

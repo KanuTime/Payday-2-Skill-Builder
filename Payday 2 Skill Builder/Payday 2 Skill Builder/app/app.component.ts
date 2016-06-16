@@ -22,17 +22,20 @@ export class AppComponent implements OnInit {
         this.heroService.getHeroes().then(heroes => this.heroes = heroes);
     }
 
-    constructor(private heroService: HeroService) {
+    constructor(private heroService: HeroService, private armorProvider: ArmorProvider) {
         
     }
 
     title = 'Tour of Heroes';
     heroes : Hero[];
     selectedHero: Hero;
-    selectedArmor: Armor = new ArmorProvider().get()[0];
+    selectedArmor: Armor = this.armorProvider.get()[1];
 
     onSelect(hero: Hero) { this.selectedHero = hero; }
 
-
+    setSelectedArmor(armor: Armor) {
+        alert(armor);
+        this.selectedArmor = armor;
+    }
     
 }

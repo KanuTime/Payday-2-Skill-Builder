@@ -1,39 +1,34 @@
-﻿import { ControlValueAccessor } from '@angular/common';
+﻿import { Input, Output, EventEmitter, OnInit  } from '@angular/core';
+import { ControlValueAccessor } from '@angular/common';
 
-export class Selection<A> implements ControlValueAccessor {
+export class Selection<A> implements OnInit {
 
     private as: A[];
     private select: A;
+    
+    @Output('selection')
+    public selectionEvent = new EventEmitter();
 
-    private onChange: (A) => void;
-
-    constructor(as: A[], select?: A) {
+    constructor(as: A[], private selectedSupplier: () => A) {
         this.as = as;
-        this.select = select ? select : as[0];
+    }
+
+    ngOnInit() {
+        this.select = this.selectedSupplier();
     }
     
-    get selected(): A {
+    getSelected(): A {
         return this.select;
     }
 
-    set selected(selected: A) {
+    setSelected(selected: A) {
         this.select = selected;
-        this.onChange(selected);
+        this.selectionEvent.emit({
+            value: this.select
+        });
     }
 
-    get elements(): A[] {
+    elements(): A[] {
         return this.as;
-    }
-    
-    writeValue(value: A) {
-        this.select = value;
-    }
-
-    registerOnChange(fn: (A) => void) {
-        this.onChange = fn;
-    }
-
-    registerOnTouched(fn: (A) => void) {
-        // you can't touch this
     }
 }

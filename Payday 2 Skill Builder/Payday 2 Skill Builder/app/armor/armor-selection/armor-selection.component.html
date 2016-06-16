@@ -1,7 +1,7 @@
-﻿<h3>Select Armor: {{selected().name}}</h3>
+﻿<h3>Select Armor: {{getSelected().name}}</h3>
 <ul>
-    <li *ngFor="let a of armorSet.armors"
-        (click)="armorSet.setSelected(a)">
-        {{a.name}}
+    <li *ngFor="let armor of elements()"
+        (click)="setSelected(armor)">
+        {{armor.name}}
     </li>
 </ul>
