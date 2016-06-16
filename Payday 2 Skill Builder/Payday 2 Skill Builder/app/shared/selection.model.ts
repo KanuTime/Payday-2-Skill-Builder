@@ -1,31 +1,28 @@
 ﻿import { Input, Output, EventEmitter, OnInit  } from '@angular/core';
-import { ControlValueAccessor } from '@angular/common';
 
 export class Selection<A> implements OnInit {
-
-    private as: A[];
-    private select: A;
     
-    @Output('selection')
-    public selectionEvent = new EventEmitter();
+    private _selected: A;
 
-    constructor(as: A[], private selectedSupplier: () => A) {
-        this.as = as;
-    }
+    @Input('selected') initiallySelected: A;
+    @Output('selection') selection = new EventEmitter();
+
+    constructor(
+        private as: A[]
+    ){ }
 
     ngOnInit() {
-        this.select = this.selectedSupplier();
+        this._selected = this.initiallySelected;
+        this.initiallySelected = undefined;
     }
     
-    getSelected(): A {
-        return this.select;
+    selected(): A {
+        return this._selected;
     }
 
-    setSelected(selected: A) {
-        this.select = selected;
-        this.selectionEvent.emit({
-            value: this.select
-        });
+    select(selected: A) {
+        this._selected = selected;
+        this.selection.emit(this._selected);
     }
 
     elements(): A[] {

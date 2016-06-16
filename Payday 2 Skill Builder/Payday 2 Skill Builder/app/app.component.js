@@ -26,7 +26,6 @@ var AppComponent = (function () {
     };
     AppComponent.prototype.onSelect = function (hero) { this.selectedHero = hero; };
     AppComponent.prototype.setSelectedArmor = function (armor) {
-        alert(armor);
         this.selectedArmor = armor;
     };
     AppComponent = __decorate([

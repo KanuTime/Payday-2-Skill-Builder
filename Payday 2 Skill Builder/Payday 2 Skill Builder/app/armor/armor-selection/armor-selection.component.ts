@@ -11,12 +11,10 @@ import { ArmorProvider } from '../shared/armor.provider';
     moduleId: module.id,
     providers: [ArmorProvider]
 })
-export class ArmorSelectionComponent extends Selection<Armor> implements OnInit {
-
-    @Input() armor: Armor;
-
+export class ArmorSelectionComponent extends Selection<Armor> {
+    
     constructor(armorProvider: ArmorProvider) {
-        super(armorProvider.get(), () => this.armor);
+        super(armorProvider.get());
     }
 
 }

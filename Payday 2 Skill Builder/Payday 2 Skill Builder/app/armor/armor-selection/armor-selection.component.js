@@ -14,19 +14,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var armor_model_1 = require('../shared/armor.model');
 var selection_model_1 = require('../../shared/selection.model');
 var armor_provider_1 = require('../shared/armor.provider');
 var ArmorSelectionComponent = (function (_super) {
     __extends(ArmorSelectionComponent, _super);
     function ArmorSelectionComponent(armorProvider) {
-        var _this = this;
-        _super.call(this, armorProvider.get(), function () { return _this.armor; });
+        _super.call(this, armorProvider.get());
     }
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', armor_model_1.Armor)
-    ], ArmorSelectionComponent.prototype, "armor", void 0);
     ArmorSelectionComponent = __decorate([
         core_1.Component({
             selector: 'armor-selection',

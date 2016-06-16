@@ -34,7 +34,6 @@ export class AppComponent implements OnInit {
     onSelect(hero: Hero) { this.selectedHero = hero; }
 
     setSelectedArmor(armor: Armor) {
-        alert(armor);
         this.selectedArmor = armor;
     }
     

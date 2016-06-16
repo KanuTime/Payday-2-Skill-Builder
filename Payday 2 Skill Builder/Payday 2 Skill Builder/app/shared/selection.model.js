@@ -10,30 +10,32 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var Selection = (function () {
-    function Selection(as, selectedSupplier) {
-        this.selectedSupplier = selectedSupplier;
-        this.selectionEvent = new core_1.EventEmitter();
+    function Selection(as) {
         this.as = as;
+        this.selection = new core_1.EventEmitter();
     }
     Selection.prototype.ngOnInit = function () {
-        this.select = this.selectedSupplier();
+        this._selected = this.initiallySelected;
+        this.initiallySelected = undefined;
     };
-    Selection.prototype.getSelected = function () {
-        return this.select;
+    Selection.prototype.selected = function () {
+        return this._selected;
     };
-    Selection.prototype.setSelected = function (selected) {
-        this.select = selected;
-        this.selectionEvent.emit({
-            value: this.select
-        });
+    Selection.prototype.select = function (selected) {
+        this._selected = selected;
+        this.selection.emit(this._selected);
     };
     Selection.prototype.elements = function () {
         return this.as;
     };
     __decorate([
+        core_1.Input('selected'), 
+        __metadata('design:type', Object)
+    ], Selection.prototype, "initiallySelected", void 0);
+    __decorate([
         core_1.Output('selection'), 
         __metadata('design:type', Object)
-    ], Selection.prototype, "selectionEvent", void 0);
+    ], Selection.prototype, "selection", void 0);
     return Selection;
 }());
 exports.Selection = Selection;
