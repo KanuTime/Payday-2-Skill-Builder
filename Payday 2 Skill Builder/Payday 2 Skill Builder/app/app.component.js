@@ -18,7 +18,7 @@ var AppComponent = (function () {
         this.heroService = heroService;
         this.armorProvider = armorProvider;
         this.title = 'Tour of Heroes';
-        this.selectedArmor = this.armorProvider.get()[1];
+        this.selectedArmor = this.armorProvider.get()[0];
     }
     AppComponent.prototype.ngOnInit = function () {
         var _this = this;

@@ -12,7 +12,7 @@ var core_1 = require('@angular/core');
 var Selection = (function () {
     function Selection(as) {
         this.as = as;
-        this.selection = new core_1.EventEmitter();
+        this.onSelection = new core_1.EventEmitter();
     }
     Selection.prototype.ngOnInit = function () {
         this._selected = this.initiallySelected;
@@ -23,7 +23,7 @@ var Selection = (function () {
     };
     Selection.prototype.select = function (selected) {
         this._selected = selected;
-        this.selection.emit(this._selected);
+        this.onSelection.emit(this._selected);
     };
     Selection.prototype.elements = function () {
         return this.as;
@@ -35,7 +35,7 @@ var Selection = (function () {
     __decorate([
         core_1.Output('selection'), 
         __metadata('design:type', Object)
-    ], Selection.prototype, "selection", void 0);
+    ], Selection.prototype, "onSelection", void 0);
     return Selection;
 }());
 exports.Selection = Selection;

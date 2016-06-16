@@ -5,7 +5,7 @@ export class Selection<A> implements OnInit {
     private _selected: A;
 
     @Input('selected') initiallySelected: A;
-    @Output('selection') selection = new EventEmitter();
+    @Output('selection') onSelection = new EventEmitter();
 
     constructor(
         private as: A[]
@@ -22,7 +22,7 @@ export class Selection<A> implements OnInit {
 
     select(selected: A) {
         this._selected = selected;
-        this.selection.emit(this._selected);
+        this.onSelection.emit(this._selected);
     }
 
     elements(): A[] {

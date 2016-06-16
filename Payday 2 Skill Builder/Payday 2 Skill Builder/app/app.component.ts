@@ -29,7 +29,7 @@ export class AppComponent implements OnInit {
     title = 'Tour of Heroes';
     heroes : Hero[];
     selectedHero: Hero;
-    selectedArmor: Armor = this.armorProvider.get()[1];
+    selectedArmor: Armor = this.armorProvider.get()[0];
 
     onSelect(hero: Hero) { this.selectedHero = hero; }
 
