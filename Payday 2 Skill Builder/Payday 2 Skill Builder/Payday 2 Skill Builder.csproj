@@ -34,6 +34,7 @@
   <ItemGroup>
     <TypeScriptCompile Include="app\app.component.ts" />
     <TypeScriptCompile Include="app\armor\armor-detail\armor-detail.component.ts" />
+    <TypeScriptCompile Include="app\armor\armor-preview\armor-preview.component.ts" />
     <TypeScriptCompile Include="app\armor\armor-selection\armor-selection.component.ts" />
     <TypeScriptCompile Include="app\armor\armor-detail\index.ts" />
     <TypeScriptCompile Include="app\armor\armor-selection\index.ts" />
@@ -42,6 +43,7 @@
     <TypeScriptCompile Include="app\armor\index.ts" />
     <TypeScriptCompile Include="app\armor\shared\armor.provider.ts" />
     <TypeScriptCompile Include="app\armor\shared\index.ts" />
+    <TypeScriptCompile Include="app\default\default.component.ts" />
     <TypeScriptCompile Include="app\effect\efficacious.model.ts" />
     <TypeScriptCompile Include="app\effect\index.ts" />
     <TypeScriptCompile Include="app\effect\property.provider.ts" />
@@ -62,7 +64,7 @@
     <Content Include="typings.json" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="app\armor\armor-preview\" />
+    <Folder Include="app\skills\" />
     <Folder Include="assets\" />
   </ItemGroup>
   <PropertyGroup>
