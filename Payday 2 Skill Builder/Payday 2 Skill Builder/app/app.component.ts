@@ -20,30 +20,19 @@ import { PlayerStatsComponent } from './player/player-stats/player-stats.compone
     providers: [ArmorProvider, EffectService],
     moduleId: module.id,
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
     
     constructor(
         private armorProvider: ArmorProvider,
         private effectService: EffectService
     ) { }
-
-    ngOnInit() {
-        this.player = this.createPlayer();
-    }
-
+    
     title = 'Payday 2 Skill Builder';
 
-    player: Player;
+    player: Player = this.loadPlayer();
 
-    createPlayer(): Player {
+    loadPlayer(): Player {
         return new Player(this.armorProvider.get()[0]);
-    }
-    
-    skills = [ new Effect(PropertyProvider.ARMOR, 50, 10) ];
-    
-    
-    setSelectedArmor(armor: Armor) {
-        this.player.armor = armor;
-    }
+    }   
     
 }

@@ -10,14 +10,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var player_model_1 = require('../shared/player.model');
-var effect_service_1 = require('../../effect/effect.service');
 var PlayerStatsComponent = (function () {
-    function PlayerStatsComponent(effectService) {
-        this.effectService = effectService;
+    function PlayerStatsComponent() {
     }
-    PlayerStatsComponent.prototype.ngOnInit = function () {
-        //this.stats = this.effectService.evaluate(this.player);
-    };
     __decorate([
         core_1.Input(), 
         __metadata('design:type', player_model_1.Player)
@@ -28,7 +23,7 @@ var PlayerStatsComponent = (function () {
             templateUrl: 'player-stats.component.html',
             moduleId: module.id
         }), 
-        __metadata('design:paramtypes', [effect_service_1.EffectService])
+        __metadata('design:paramtypes', [])
     ], PlayerStatsComponent);
     return PlayerStatsComponent;
 }());

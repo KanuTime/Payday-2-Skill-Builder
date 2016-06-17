@@ -7,13 +7,14 @@
         </td>
         <td>
             <h2>Player stats:</h2>
-            <!--<player-stats [player]="player"></player-stats>-->
+            <player-stats [player]="player"></player-stats>
         </td> 
     </tr>
     <tr>
         <td>
-            <armor-selection [selected]="player.armor"
-                             (selection)="setSelectedArmor($event)">
+            <armor-selection 
+                [selected] ="player.armor"
+                (selection)="player.armor = $event">
             </armor-selection>
         </td>
         <td>

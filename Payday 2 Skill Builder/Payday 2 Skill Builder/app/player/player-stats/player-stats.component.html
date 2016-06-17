@@ -1,6 +1,6 @@
 ﻿<table>
-    <tr *ngFor="let effect of player.armor">
+    <tr *ngFor="let effect of player.armor.allEffects()">
         <td>{{effect.property.name}}</td>
-        <td>{{effect.property.absolute}}</td>
+        <td>{{effect.absolute}}</td>
     </tr>
 </table>
