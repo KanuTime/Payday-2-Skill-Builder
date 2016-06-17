@@ -1,52 +1,49 @@
 ﻿import { Component, OnInit } from '@angular/core';
 
-import { Hero } from './hero';
-import { HeroDetailComponent } from './hero-detail.component';
-import { HeroService } from './hero.service';
-
 import { Armor } from './armor';
 import { ArmorProvider } from './armor/shared/armor.provider';
 import { ArmorSelectionComponent } from './armor/armor-selection/armor-selection.component';
+import { ArmorDetailComponent } from './armor/armor-detail/armor-detail.component';
 
 import { EffectService } from './effect/effect.service';
 import { Effect } from './effect/effect.model';
-import { Property } from './effect/property.model';
+import { PropertyProvider } from './effect/property.provider';
+
+import { Player } from './player/shared/player.model';
+import { PlayerStatsComponent } from './player/player-stats/player-stats.component';
 
 @Component({
     selector: 'my-app',
     templateUrl: 'app.component.html',
     styleUrls: ['app.component.css'],
-    directives: [HeroDetailComponent, ArmorSelectionComponent],
-    providers: [HeroService, ArmorProvider, EffectService],
+    directives: [ArmorSelectionComponent, ArmorDetailComponent, PlayerStatsComponent],
+    providers: [ArmorProvider, EffectService],
     moduleId: module.id,
 })
 export class AppComponent implements OnInit {
-
-    ngOnInit() {
-        this.heroService.getHeroes().then(heroes => this.heroes = heroes);
-    }
-
+    
     constructor(
-        private heroService: HeroService,
         private armorProvider: ArmorProvider,
         private effectService: EffectService
     ) { }
 
-    title = 'Tour of Heroes';
-    heroes : Hero[];
-    selectedHero: Hero;
-    selectedArmor: Armor = this.armorProvider.get()[0];
-
-    skills = [ new Effect(Property.ARMOR, 50, 10) ];
-    effects(armor: Armor) {
-        return this.effectService.reduceValues(
-            this.effectService.combineEffects(armor.allEffects().concat(this.skills)));
+    ngOnInit() {
+        this.player = this.createPlayer();
     }
 
-    onSelect(hero: Hero) { this.selectedHero = hero; }
+    title = 'Payday 2 Skill Builder';
 
+    player: Player;
+
+    createPlayer(): Player {
+        return new Player(this.armorProvider.get()[0]);
+    }
+    
+    skills = [ new Effect(PropertyProvider.ARMOR, 50, 10) ];
+    
+    
     setSelectedArmor(armor: Armor) {
-        this.selectedArmor = armor;
+        this.player.armor = armor;
     }
     
 }

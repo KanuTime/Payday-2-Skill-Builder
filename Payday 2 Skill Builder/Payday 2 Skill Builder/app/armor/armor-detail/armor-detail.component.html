@@ -1,1 +1,8 @@
-﻿<div>{{armor.name}}</div>
+﻿<div>
+    <table>
+        <tr *ngFor="let effect of armor.allEffects()">
+            <td>{{effect.property.name}}</td>
+            <td>{{effect.absolute}}</td>
+        </tr>
+    </table>
+</div>

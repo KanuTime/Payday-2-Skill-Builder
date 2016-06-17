@@ -1,6 +1,6 @@
 ﻿import { Component, Input } from '@angular/core';
 
-import { Armor } from '../shared';
+import { Armor } from '../shared/armor.model';
 
 @Component({
     selector: 'armor-detail',
@@ -9,8 +9,6 @@ import { Armor } from '../shared';
 })
 export class ArmorDetailComponent {
 
-    constructor(
-        @Input() public armor: Armor
-    ) { }
+    @Input() private armor: Armor;
 
 }

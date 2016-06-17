@@ -1,6 +1,5 @@
 "use strict";
-var effect_model_1 = require('../../effect/effect.model');
-var property_model_1 = require('../../effect/property.model');
+var property_provider_1 = require('../../effect/property.provider');
 var Armor = (function () {
     function Armor(_name, _armor, _concealment, _speed, _dodge, _steadiness, _stamina, _health, _armorRecovery) {
         this._name = _name;
@@ -19,42 +18,42 @@ var Armor = (function () {
         configurable: true
     });
     Object.defineProperty(Armor.prototype, "armor", {
-        get: function () { return new effect_model_1.Effect(property_model_1.Property.ARMOR, 0, this._armor); },
+        get: function () { return property_provider_1.PropertyProvider.ARMOR.absolute(this._armor); },
         enumerable: true,
         configurable: true
     });
     Object.defineProperty(Armor.prototype, "concealment", {
-        get: function () { return new effect_model_1.Effect(property_model_1.Property.CONCEALMENT, 0, this._concealment); },
+        get: function () { return property_provider_1.PropertyProvider.CONCEALMENT.absolute(this._concealment); },
         enumerable: true,
         configurable: true
     });
     Object.defineProperty(Armor.prototype, "speed", {
-        get: function () { return new effect_model_1.Effect(property_model_1.Property.SPEED, 0, this._speed); },
+        get: function () { return property_provider_1.PropertyProvider.SPEED.absolute(this._speed); },
         enumerable: true,
         configurable: true
     });
     Object.defineProperty(Armor.prototype, "dodge", {
-        get: function () { return new effect_model_1.Effect(property_model_1.Property.DODGE, 0, this._dodge); },
+        get: function () { return property_provider_1.PropertyProvider.DODGE.absolute(this._dodge); },
         enumerable: true,
         configurable: true
     });
     Object.defineProperty(Armor.prototype, "steadiness", {
-        get: function () { return new effect_model_1.Effect(property_model_1.Property.STEADINESS, 0, this._steadiness); },
+        get: function () { return property_provider_1.PropertyProvider.STEADINESS.absolute(this._steadiness); },
         enumerable: true,
         configurable: true
     });
     Object.defineProperty(Armor.prototype, "stamina", {
-        get: function () { return new effect_model_1.Effect(property_model_1.Property.STAMINA, 0, this._stamina); },
+        get: function () { return property_provider_1.PropertyProvider.STAMINA.absolute(this._stamina); },
         enumerable: true,
         configurable: true
     });
     Object.defineProperty(Armor.prototype, "health", {
-        get: function () { return new effect_model_1.Effect(property_model_1.Property.HEALTH, 0, this._health); },
+        get: function () { return property_provider_1.PropertyProvider.HEALTH.absolute(this._health); },
         enumerable: true,
         configurable: true
     });
     Object.defineProperty(Armor.prototype, "armorRecovery", {
-        get: function () { return new effect_model_1.Effect(property_model_1.Property.ARMOR_RECOVERY, 0, this._armorRecovery); },
+        get: function () { return property_provider_1.PropertyProvider.ARMOR_RECOVERY.absolute(this._armorRecovery); },
         enumerable: true,
         configurable: true
     });

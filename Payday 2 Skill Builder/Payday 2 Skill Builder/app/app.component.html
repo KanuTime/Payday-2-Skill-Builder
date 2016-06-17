@@ -1,15 +1,23 @@
 ﻿<h1>{{title}}</h1>
-<h2>My Heroes</h2>
-<ul class="heroes">
-    <li *ngFor="let hero of heroes"
-        [class.selected]="hero === selectedHero"
-        (click)="onSelect(hero)">
-        <span class="badge">{{hero.id}}</span> {{hero.name}}
-    </li>
-</ul>
-<my-hero-detail [hero]="selectedHero"></my-hero-detail>
-<h3>Currently selected armor: {{selectedArmor.name}}</h3>
-<armor-selection [selected]="selectedArmor" 
-                 (selection)="setSelectedArmor($event)">
-</armor-selection>
-Combined Effects: {{effects(selectedArmor) | json}}
+
+<table style="width:100%">
+    <tr>
+        <td style="width:50%">
+            <h3>Currently selected armor: {{player.armor.name}}</h3>
+        </td>
+        <td>
+            <h2>Player stats:</h2>
+            <!--<player-stats [player]="player"></player-stats>-->
+        </td> 
+    </tr>
+    <tr>
+        <td>
+            <armor-selection [selected]="player.armor"
+                             (selection)="setSelectedArmor($event)">
+            </armor-selection>
+        </td>
+        <td>
+            <armor-detail [armor]="player.armor"></armor-detail>
+        </td>
+    </tr>
+</table>

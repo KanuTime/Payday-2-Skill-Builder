@@ -12,15 +12,18 @@ var core_1 = require('@angular/core');
 var EffectService = (function () {
     function EffectService() {
     }
+    EffectService.prototype.evaluate = function (efficacious) {
+        return this.reduceValues(this.combineEffects(efficacious.allEffects()));
+    };
     EffectService.prototype.combineEffects = function (effects) {
         var map = {};
         for (var _i = 0, effects_1 = effects; _i < effects_1.length; _i++) {
             var effect = effects_1[_i];
-            if (effect.property in map) {
-                map[effect.property] = effect.plus(map[effect.property]);
+            if (effect.property.name in map) {
+                map[effect.property.name] = effect.plus(map[effect.property.name]);
             }
             else {
-                map[effect.property] = effect;
+                map[effect.property.name] = effect;
             }
         }
         return map;
@@ -30,7 +33,7 @@ var EffectService = (function () {
         for (var property in effectMap) {
             var effect = effectMap[property];
             var value = effect.absolute * (100 + effect.percental) / 100;
-            valueMap[effect.property] = value;
+            valueMap[effect.property.name] = value;
         }
         return valueMap;
     };

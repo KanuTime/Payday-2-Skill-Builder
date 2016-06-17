@@ -1,6 +1,6 @@
 ﻿import { Provider } from '@angular/core';
 import { Effect } from '../../effect/effect.model';
-import { Property } from '../../effect/property.model';
+import { PropertyProvider } from '../../effect/property.provider';
 import { Efficacious } from '../../effect/efficacious.model';
 
 export class Armor implements Efficacious {
@@ -20,14 +20,14 @@ export class Armor implements Efficacious {
 
     get name(): string { return this._name; }
 
-    get armor(): Effect { return new Effect(Property.ARMOR, 0, this._armor); }
-    get concealment(): Effect { return new Effect(Property.CONCEALMENT, 0, this._concealment); }
-    get speed(): Effect { return new Effect(Property.SPEED, 0, this._speed); }
-    get dodge(): Effect { return new Effect(Property.DODGE, 0, this._dodge); }
-    get steadiness(): Effect { return new Effect(Property.STEADINESS, 0, this._steadiness); }
-    get stamina(): Effect { return new Effect(Property.STAMINA, 0, this._stamina); }
-    get health(): Effect { return new Effect(Property.HEALTH, 0, this._health); }
-    get armorRecovery(): Effect { return new Effect(Property.ARMOR_RECOVERY, 0, this._armorRecovery); }
+    get armor(): Effect { return PropertyProvider.ARMOR.absolute(this._armor); }
+    get concealment(): Effect { return PropertyProvider.CONCEALMENT.absolute(this._concealment); }
+    get speed(): Effect { return PropertyProvider.SPEED.absolute(this._speed); }
+    get dodge(): Effect { return PropertyProvider.DODGE.absolute(this._dodge); }
+    get steadiness(): Effect { return PropertyProvider.STEADINESS.absolute(this._steadiness); }
+    get stamina(): Effect { return PropertyProvider.STAMINA.absolute(this._stamina); }
+    get health(): Effect { return PropertyProvider.HEALTH.absolute(this._health); }
+    get armorRecovery(): Effect { return PropertyProvider.ARMOR_RECOVERY.absolute(this._armorRecovery); }
 
     allEffects(): Effect[] {
         return [

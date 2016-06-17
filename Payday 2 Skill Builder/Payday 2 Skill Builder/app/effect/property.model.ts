@@ -1,13 +1,24 @@
-﻿export namespace Property {
+﻿import { Effect } from './effect.model';
 
-    // Player stats
-    export const ARMOR = "Armor";
-    export const CONCEALMENT = "Concealment";
-    export const SPEED = "Speed";
-    export const DODGE = "Dodge";
-    export const STEADINESS = "Steadiness";
-    export const STAMINA = "Stamina";
-    export const HEALTH = "Health";
-    export const ARMOR_RECOVERY = "Armor Recovery";
+export class Property {
+
+    constructor(
+        private _name: string,
+        private _description: string,
+        private _unit?: string
+    ) { }
+
+    get name(): string { return this._name; }
+    get description(): string { return this._description; }
+    get unit(): string { return this._unit ? this._unit : ""; }
+
+    absolute(value: number) {
+        return new Effect(this, 0, value);
+    }
+
+    percental(value: number) {
+        return new Effect(this, value, 0);
+    }
 
 }
+
