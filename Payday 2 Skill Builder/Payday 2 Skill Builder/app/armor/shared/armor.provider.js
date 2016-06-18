@@ -13,7 +13,7 @@ var armor_model_1 = require('./armor.model');
 var ArmorProvider = (function () {
     function ArmorProvider() {
     }
-    ArmorProvider.prototype.get = function () { return ARMORS; };
+    ArmorProvider.prototype.getArmors = function () { return ARMORS; };
     ArmorProvider = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [])

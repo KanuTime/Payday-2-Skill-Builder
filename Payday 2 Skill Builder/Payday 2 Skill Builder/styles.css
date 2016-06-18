@@ -1,13 +1,49 @@
-﻿h1 {
-  color: #369;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 250%;
-}
-body {
-  margin: 2em;
+﻿@font-face {
+    font-family: 'Padaloma';
+    src:url('assets/fonts/padaloma/Padaloma.ttf.woff') format('woff'),
+        url('assets/fonts/padaloma/Padaloma.ttf.svg#Padaloma') format('svg'),
+        url('assets/fonts/padaloma/Padaloma.ttf.eot'),
+        url('assets/fonts/padaloma/Padaloma.ttf.eot?#iefix') format('embedded-opentype'); 
+    font-weight: normal;
+    font-style: normal;
 }
 
- /*
-  * See https://github.com/angular/angular.io/blob/master/public/docs/_examples/styles.css
-  * for the full set of master styles used by the documentation samples
-  */
+@font-face {
+    font-family: 'XXII';
+    src:url('assets/fonts/xxii/XXII-DONT-MESS-WITH-VIKINGS-HARDCORE.ttf.woff') format('woff'),
+        url('assets/fonts/xxii/XXII-DONT-MESS-WITH-VIKINGS-HARDCORE.ttf.svg#XXII-DONT-MESS-WITH-VIKINGS-HARDCORE') format('svg'),
+        url('assets/fonts/xxii/XXII-DONT-MESS-WITH-VIKINGS-HARDCORE.ttf.eot'),
+        url('assets/fonts/xxii/XXII-DONT-MESS-WITH-VIKINGS-HARDCORE.ttf.eot?#iefix') format('embedded-opentype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+h1 {
+  color: deepskyblue;
+  font-family: Padaloma;
+  font-size: 250%;
+}
+
+h2 {
+    color: deepskyblue;
+    font-family: Padaloma;
+}
+
+body {
+  margin: 2em;
+  background: #222;
+  color: #fff;
+  font-family: Padaloma;
+}
+
+.backed {
+    background: #222;
+}
+
+.alternating:nth-child(odd) {
+    background: #222;
+}
+
+.alternating:nth-child(even) {
+    background: #111;
+}

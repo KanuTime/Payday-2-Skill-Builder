@@ -1,11 +1,10 @@
 ﻿import { Injectable } from '@angular/core';
 
-import { Provider } from '../..';
 import { Armor } from './armor.model';
 
 @Injectable()
-export class ArmorProvider implements Provider<Armor[]> {
-    get(): Armor[] { return ARMORS; }
+export class ArmorProvider {
+    getArmors(): Armor[] { return ARMORS; }
 }
 
 const TWO_PIECE_SUIT = new Armor("Two-piece Suit", 20, 30, 37, 10, 11, 21, 230, 3);

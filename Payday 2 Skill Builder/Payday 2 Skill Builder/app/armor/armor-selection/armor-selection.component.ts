@@ -14,7 +14,7 @@ import { ArmorProvider } from '../shared/armor.provider';
 export class ArmorSelectionComponent extends Selection<Armor> {
     
     constructor(armorProvider: ArmorProvider) {
-        super(armorProvider.get());
+        super(armorProvider.getArmors());
     }
 
 }

@@ -1,24 +1,17 @@
-﻿<h1>{{title}}</h1>
+﻿<center><h1>{{title}}</h1></center>
 
 <table style="width:100%">
     <tr>
-        <td style="width:50%">
-            <h3>Currently selected armor: {{player.armor.name}}</h3>
+        <td style="width:20%">
+            <build-stats [build]="build"></build-stats>
         </td>
-        <td>
-            <h2>Player stats:</h2>
-            <player-stats [player]="player"></player-stats>
-        </td> 
-    </tr>
-    <tr>
-        <td>
-            <armor-selection 
-                [selected] ="player.armor"
-                (selection)="player.armor = $event">
+        <td style="width: 50%">
+            <armor-selection [selected]="build.armor"
+                             (selection)="build.armor = $event">
             </armor-selection>
         </td>
-        <td>
-            <armor-detail [armor]="player.armor"></armor-detail>
+        <td style="width: 30%">
+            <build-configuration [build]="build"></build-configuration>
         </td>
     </tr>
 </table>

@@ -1,38 +1,32 @@
-﻿import { Component, OnInit } from '@angular/core';
+﻿import { Component } from '@angular/core';
 
-import { Armor } from './armor';
-import { ArmorProvider } from './armor/shared/armor.provider';
-import { ArmorSelectionComponent } from './armor/armor-selection/armor-selection.component';
-import { ArmorDetailComponent } from './armor/armor-detail/armor-detail.component';
+import { PROVIDERS } from './app.provider';
 
-import { EffectService } from './effect/effect.service';
-import { Effect } from './effect/effect.model';
-import { PropertyProvider } from './effect/property.provider';
-
-import { Player } from './player/shared/player.model';
-import { PlayerStatsComponent } from './player/player-stats/player-stats.component';
+import { Build } from './build/shared/build.model';
+import { BuildProvider } from './build/shared/build.provider';
+import { BuildStatsComponent } from './build/build-stats/build-stats.component';
+import { BuildConfigurationComponent } from './build/build-configuration/build-configuration.component';
 
 @Component({
     selector: 'my-app',
     templateUrl: 'app.component.html',
     styleUrls: ['app.component.css'],
-    directives: [ArmorSelectionComponent, ArmorDetailComponent, PlayerStatsComponent],
-    providers: [ArmorProvider, EffectService],
+    directives: [ BuildStatsComponent, BuildConfigurationComponent ],
+    providers: PROVIDERS,
     moduleId: module.id,
 })
 export class AppComponent {
     
     constructor(
-        private armorProvider: ArmorProvider,
-        private effectService: EffectService
+        private playerProvider: BuildProvider
     ) { }
     
     title = 'Payday 2 Skill Builder';
 
-    player: Player = this.loadPlayer();
+    build: Build = this.loadBuild();
 
-    loadPlayer(): Player {
-        return new Player(this.armorProvider.get()[0]);
+    loadBuild(): Build {
+        return this.playerProvider.getBuildById("");
     }   
     
 }
