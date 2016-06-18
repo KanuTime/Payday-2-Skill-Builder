@@ -4,6 +4,7 @@ import { PROVIDERS } from './app.provider';
 
 import { Build } from './build/shared/build.model';
 import { BuildProvider } from './build/shared/build.provider';
+
 import { BuildStatsComponent } from './build/build-stats/build-stats.component';
 import { BuildConfigurationComponent } from './build/build-configuration/build-configuration.component';
 
@@ -13,20 +14,16 @@ import { BuildConfigurationComponent } from './build/build-configuration/build-c
     styleUrls: ['app.component.css'],
     directives: [ BuildStatsComponent, BuildConfigurationComponent ],
     providers: PROVIDERS,
-    moduleId: module.id,
+    moduleId: module.id
 })
 export class AppComponent {
     
-    constructor(
-        private playerProvider: BuildProvider
-    ) { }
-    
-    title = 'Payday 2 Skill Builder';
+    build: Build;
 
-    build: Build = this.loadBuild();
-
-    loadBuild(): Build {
-        return this.playerProvider.getBuildById("");
-    }   
+    constructor(buildProvider: BuildProvider) {
+        this.build = buildProvider.fromUrl();
+        buildProvider.updateUrl(this.build);
+    }
     
 }
+

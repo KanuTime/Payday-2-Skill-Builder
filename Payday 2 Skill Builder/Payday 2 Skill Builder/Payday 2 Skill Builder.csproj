@@ -50,6 +50,7 @@
     <TypeScriptCompile Include="app\build\build-left\build-left.component.ts" />
     <TypeScriptCompile Include="app\build\build-stats\build-stat.model.ts" />
     <TypeScriptCompile Include="app\build\build-stats\build-stats.provider.ts" />
+    <TypeScriptCompile Include="app\build\shared\parser\armor.parser.ts" />
     <TypeScriptCompile Include="app\default\default.component.ts" />
     <TypeScriptCompile Include="app\effect\efficacious.model.ts" />
     <TypeScriptCompile Include="app\effect\property.provider.ts" />
@@ -62,7 +63,6 @@
     <TypeScriptCompile Include="app\build\shared\build.model.ts" />
     <TypeScriptCompile Include="app\build\shared\build.provider.ts" />
     <TypeScriptCompile Include="app\shared\selection.model.ts" />
-    <TypeScriptCompile Include="app\shared\provider.interface.ts" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="package.json" />

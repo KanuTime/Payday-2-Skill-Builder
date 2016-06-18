@@ -14,14 +14,10 @@ var build_provider_1 = require('./build/shared/build.provider');
 var build_stats_component_1 = require('./build/build-stats/build-stats.component');
 var build_configuration_component_1 = require('./build/build-configuration/build-configuration.component');
 var AppComponent = (function () {
-    function AppComponent(playerProvider) {
-        this.playerProvider = playerProvider;
-        this.title = 'Payday 2 Skill Builder';
-        this.build = this.loadBuild();
+    function AppComponent(buildProvider) {
+        this.build = buildProvider.fromUrl();
+        buildProvider.updateUrl(this.build);
     }
-    AppComponent.prototype.loadBuild = function () {
-        return this.playerProvider.getBuildById("");
-    };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
@@ -29,7 +25,7 @@ var AppComponent = (function () {
             styleUrls: ['app.component.css'],
             directives: [build_stats_component_1.BuildStatsComponent, build_configuration_component_1.BuildConfigurationComponent],
             providers: app_provider_1.PROVIDERS,
-            moduleId: module.id,
+            moduleId: module.id
         }), 
         __metadata('design:paramtypes', [build_provider_1.BuildProvider])
     ], AppComponent);
