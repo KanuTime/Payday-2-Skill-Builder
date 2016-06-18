@@ -9,12 +9,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var app_provider_1 = require('./app.provider');
+var app_providers_1 = require('./app.providers');
+var app_directives_1 = require('./app.directives');
 var build_provider_1 = require('./build/shared/build.provider');
-var build_stats_component_1 = require('./build/build-stats/build-stats.component');
-var build_configuration_component_1 = require('./build/build-configuration/build-configuration.component');
+var overlay_model_1 = require('./shared/overlay.model');
 var AppComponent = (function () {
     function AppComponent(buildProvider) {
+        this.overlay = new overlay_model_1.Overlay();
         this.build = buildProvider.fromUrl();
         buildProvider.updateUrl(this.build);
     }
@@ -23,8 +24,8 @@ var AppComponent = (function () {
             selector: 'my-app',
             templateUrl: 'app.component.html',
             styleUrls: ['app.component.css'],
-            directives: [build_stats_component_1.BuildStatsComponent, build_configuration_component_1.BuildConfigurationComponent],
-            providers: app_provider_1.PROVIDERS,
+            directives: app_directives_1.DIRECTIVES,
+            providers: app_providers_1.PROVIDERS,
             moduleId: module.id
         }), 
         __metadata('design:paramtypes', [build_provider_1.BuildProvider])

@@ -2,16 +2,29 @@
 
 <table style="width:100%">
     <tr>
-        <td style="width:20%">
+        <td style="width:20%; height:50%">
             <build-stats [build]="build"></build-stats>
         </td>
-        <td style="width: 50%">
-            <armor-selection [selected]="build.armor"
-                             (selection)="build.armor = $event">
-            </armor-selection>
+        <td style="width: 50%" rowspan="2">
+            
         </td>
-        <td style="width: 30%">
-            <build-configuration [build]="build"></build-configuration>
+        <td style="width: 30%" rowspan="2">
+            <build-configuration [build]="build" 
+                                 [overlay]="overlay">
+            </build-configuration>
+        </td>
+    </tr>
+    <tr>
+        <td>
+
         </td>
     </tr>
 </table>
+
+<div *ngIf="overlay.showOverlay" class="overlay">
+    <armor-selection *ngIf="overlay.showArmor"
+                     [selected]="build.armor"
+                     (selection)="build.armor = $event">
+    </armor-selection>
+    <span class="backButton" (click)="overlay.setEmpty()">Back</span>
+</div>
