@@ -1,0 +1,10 @@
+﻿.tile {
+    background-color:rgba(0, 0, 0, 0.5);
+    width: 20vh;
+    height: 20vh;
+    cursor: pointer;
+    font-family: XXII;
+    font-size: 1.7em;
+    color: deepskyblue;
+    vertical-align:text-top;
+}

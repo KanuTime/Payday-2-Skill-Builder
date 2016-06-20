@@ -4,7 +4,7 @@ import { Armor } from './armor.model';
 
 @Injectable()
 export class ArmorProvider {
-    getArmors(): Armor[] { return ARMORS; }
+    armors(): Armor[] { return ARMORS; }
 }
 
 const TWO_PIECE_SUIT = new Armor("Two-piece Suit", 20, 30, 37, 10, 11, 21, 230, 3);
