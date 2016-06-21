@@ -1,15 +1,17 @@
 ﻿import { Injectable } from '@angular/core';
 
-import { Effect } from './effect.model';
-import { Efficacious } from './efficacious.model';
-import { Property } from './property.model';
+import {
+    Effect,
+    Efficacious,
+    Property
+} from './index';
 
 @Injectable()
 export class EffectService {
 
     evaluate(efficacious: Efficacious) {
         return this.reduceValues(
-            this.combineEffects(efficacious.allEffects()));
+            this.combineEffects(efficacious.effects()));
     }
 
     private combineEffects(effects: Effect[]) {

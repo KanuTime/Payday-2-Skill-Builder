@@ -34,6 +34,7 @@
     <Content Include="app\build\build-left\build-left.component.html" />
     <Content Include="app\build\build-stats\build-stats.component.css" />
     <Content Include="app\build\build-stats\build-stats.component.html" />
+    <Content Include="app\skill\skill-selection\skill-selection.component.html" />
     <Content Include="index.html" />
     <Content Include="styles.css" />
     <Content Include="systemjs.config.js" />
@@ -45,26 +46,34 @@
     <TypeScriptCompile Include="app\armor\armor-detail\armor-detail.component.ts" />
     <TypeScriptCompile Include="app\armor\armor-preview\armor-preview.component.ts" />
     <TypeScriptCompile Include="app\armor\armor-selection\armor-selection.component.ts" />
+    <TypeScriptCompile Include="app\armor\index.ts" />
     <TypeScriptCompile Include="app\armor\shared\armor.model.ts" />
     <TypeScriptCompile Include="app\armor\shared\armor.provider.ts" />
+    <TypeScriptCompile Include="app\build\build-configuration\build-configuration.component.ts" />
     <TypeScriptCompile Include="app\build\build-right\build-right.component.ts" />
     <TypeScriptCompile Include="app\build\build-left\build-left.component.ts" />
     <TypeScriptCompile Include="app\build\build-stats\build-stat.model.ts" />
+    <TypeScriptCompile Include="app\build\build-stats\build-stats.component.ts" />
     <TypeScriptCompile Include="app\build\build-stats\build-stats.provider.ts" />
+    <TypeScriptCompile Include="app\build\shared\build.model.ts" />
+    <TypeScriptCompile Include="app\build\shared\build.provider.ts" />
     <TypeScriptCompile Include="app\build\shared\parser\armor.parser.ts" />
     <TypeScriptCompile Include="app\default\default.component.ts" />
     <TypeScriptCompile Include="app\effect\efficacious.model.ts" />
+    <TypeScriptCompile Include="app\effect\index.ts" />
     <TypeScriptCompile Include="app\effect\property.provider.ts" />
+    <TypeScriptCompile Include="app\index.ts" />
     <TypeScriptCompile Include="app\main.ts" />
     <TypeScriptCompile Include="app\effect\property.model.ts" />
     <TypeScriptCompile Include="app\effect\effect.model.ts" />
     <TypeScriptCompile Include="app\effect\effect.service.ts" />
-    <TypeScriptCompile Include="app\build\build-configuration\build-configuration.component.ts" />
-    <TypeScriptCompile Include="app\build\build-stats\build-stats.component.ts" />
-    <TypeScriptCompile Include="app\build\shared\build.model.ts" />
-    <TypeScriptCompile Include="app\build\shared\build.provider.ts" />
+    <TypeScriptCompile Include="app\shared\index.ts" />
     <TypeScriptCompile Include="app\shared\overlay.model.ts" />
     <TypeScriptCompile Include="app\shared\selection.model.ts" />
+    <TypeScriptCompile Include="app\skill\index.ts" />
+    <TypeScriptCompile Include="app\skill\shared\skill.model.ts" />
+    <TypeScriptCompile Include="app\skill\shared\skill.provider.ts" />
+    <TypeScriptCompile Include="app\skill\skill-selection\skill-selection.component.ts" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="package.json" />
@@ -72,7 +81,7 @@
     <Content Include="typings.json" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="app\skills\" />
+    <Folder Include="app\skill\shared\provider\" />
     <Folder Include="assets\" />
   </ItemGroup>
   <PropertyGroup>

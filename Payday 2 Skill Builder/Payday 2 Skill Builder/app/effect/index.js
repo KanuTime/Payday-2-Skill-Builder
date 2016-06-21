@@ -1,8 +1,10 @@
 "use strict";
-function __export(m) {
-    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
-}
-__export(require('./effect.model'));
-__export(require('./effect.service'));
-__export(require('./property.model'));
+var effect_model_1 = require('./effect.model');
+exports.Effect = effect_model_1.Effect;
+var effect_service_1 = require('./effect.service');
+exports.EffectService = effect_service_1.EffectService;
+var property_model_1 = require('./property.model');
+exports.Property = property_model_1.Property;
+var property_provider_1 = require('./property.provider');
+exports.PropertyProvider = property_provider_1.PropertyProvider;
 //# sourceMappingURL=index.js.map

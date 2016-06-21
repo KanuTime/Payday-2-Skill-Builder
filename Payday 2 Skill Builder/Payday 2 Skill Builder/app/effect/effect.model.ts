@@ -1,4 +1,4 @@
-﻿import { Property } from './property.model';
+﻿import { Property } from './index';
 
 export class Effect {
         

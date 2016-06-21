@@ -1,13 +1,12 @@
 "use strict";
 var build_provider_1 = require('./build/shared/build.provider');
-var build_stats_provider_1 = require('./build/build-stats/build-stats.provider');
+//import { BuildStatsProvider } from './build/build-stats/build-stats.provider';
 var armor_provider_1 = require('./armor/shared/armor.provider');
-var armor_parser_1 = require('./build/shared/parser/armor.parser');
+//import { ArmorParser } from './build/shared/parser/armor.parser';
 exports.PROVIDERS = [
     armor_provider_1.ArmorProvider,
-    build_stats_provider_1.BuildStatsProvider,
+    //BuildStatsProvider,
     // Build Parsing
     build_provider_1.BuildProvider,
-    armor_parser_1.ArmorParser,
 ];
 //# sourceMappingURL=app.providers.js.map

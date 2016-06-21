@@ -1,5 +1,5 @@
 "use strict";
-var effect_model_1 = require('./effect.model');
+var index_1 = require('./index');
 var Property = (function () {
     function Property(_name, _description, _unit) {
         this._name = _name;
@@ -22,10 +22,10 @@ var Property = (function () {
         configurable: true
     });
     Property.prototype.absolute = function (value) {
-        return new effect_model_1.Effect(this, 0, value);
+        return new index_1.Effect(this, 0, value);
     };
     Property.prototype.percental = function (value) {
-        return new effect_model_1.Effect(this, value, 0);
+        return new index_1.Effect(this, value, 0);
     };
     return Property;
 }());

@@ -1,9 +1,7 @@
 ﻿import { Component, OnInit, Input } from '@angular/core';
 
-import { Armor } from '../shared/armor.model';
-import { Selection } from '../../shared/selection.model';
-
-import { ArmorProvider } from '../shared/armor.provider';
+import { Armor, ArmorProvider } from '../index';
+import { Selection } from '../../shared/index';
 
 @Component({
     selector: 'armor-selection',
@@ -14,7 +12,7 @@ import { ArmorProvider } from '../shared/armor.provider';
 export class ArmorSelectionComponent extends Selection<Armor> {
     
     constructor(armorProvider: ArmorProvider) {
-        super(armorProvider.getArmors());
+        super(armorProvider.get armors());
     }
 
 }

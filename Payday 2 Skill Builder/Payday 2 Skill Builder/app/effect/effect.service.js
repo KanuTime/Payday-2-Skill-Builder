@@ -13,7 +13,7 @@ var EffectService = (function () {
     function EffectService() {
     }
     EffectService.prototype.evaluate = function (efficacious) {
-        return this.reduceValues(this.combineEffects(efficacious.allEffects()));
+        return this.reduceValues(this.combineEffects(efficacious.effects()));
     };
     EffectService.prototype.combineEffects = function (effects) {
         var map = {};

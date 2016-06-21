@@ -1,7 +1,8 @@
-﻿import { Provider } from '@angular/core';
-import { Effect } from '../../effect/effect.model';
-import { PropertyProvider } from '../../effect/property.provider';
-import { Efficacious } from '../../effect/efficacious.model';
+﻿import {
+    Effect,
+    Efficacious,
+    PropertyProvider
+} from '../..';
 
 export class Armor implements Efficacious {
 
@@ -29,7 +30,7 @@ export class Armor implements Efficacious {
     get health(): Effect { return PropertyProvider.HEALTH.absolute(this._health); }
     get armorRecovery(): Effect { return PropertyProvider.ARMOR_RECOVERY.absolute(this._armorRecovery); }
 
-    allEffects(): Effect[] {
+    effects(): Effect[] {
         return [
             this.armor,
             this.concealment,

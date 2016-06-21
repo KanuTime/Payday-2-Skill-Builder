@@ -1,7 +1,7 @@
-﻿import { Effect } from './effect.model';
+﻿import { Effect } from './index';
 
 export interface Efficacious {
 
-    allEffects(): Effect[];
+    effects(): Effect[];
 
 }

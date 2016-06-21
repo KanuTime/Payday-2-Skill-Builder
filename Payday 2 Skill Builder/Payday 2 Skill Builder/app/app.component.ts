@@ -3,10 +3,11 @@
 import { PROVIDERS } from './app.providers';
 import { DIRECTIVES }from './app.directives';
 
+import { Overlay } from './shared/overlay.model';
+
 import { Build } from './build/shared/build.model';
 import { BuildProvider } from './build/shared/build.provider';
 
-import { Overlay } from './shared/overlay.model';
 
 @Component({
     selector: 'my-app',
