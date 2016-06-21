@@ -1,6 +1,6 @@
 ﻿import { Component, Input, OnInit } from '@angular/core';
 
-import { Build } from '../../build/shared/build.model';
+import { Build } from '../../builds/shared/build.model';
 
 import { Skill } from '../index';
 import { Effect, PropertyProvider } from '../..';

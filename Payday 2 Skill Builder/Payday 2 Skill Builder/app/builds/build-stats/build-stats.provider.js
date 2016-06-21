@@ -17,8 +17,8 @@ var BuildStatsProvider = (function () {
     BuildStatsProvider.prototype.getBuildStats = function (build) {
         var _this = this;
         return PROPERTIES.map(function (property) {
-            var totalValue = _this.selectEffect(property, build.allEffects()).absolute;
-            var baseValue = _this.selectEffect(property, build.armor.allEffects()).absolute;
+            var totalValue = _this.selectEffect(property, build.effects()).absolute;
+            var baseValue = _this.selectEffect(property, build.armor.effects()).absolute;
             return new build_stat_model_1.BuildStat(property.name, totalValue, baseValue, totalValue - baseValue);
         });
     };

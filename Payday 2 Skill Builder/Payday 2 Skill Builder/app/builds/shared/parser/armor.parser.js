@@ -12,7 +12,7 @@ var core_1 = require('@angular/core');
 var armor_provider_1 = require('../../../armor/shared/armor.provider');
 var ArmorParser = (function () {
     function ArmorParser(armorProvider) {
-        this.armors = armorProvider.getArmors();
+        this.armors = armorProvider.armors;
     }
     ArmorParser.prototype.fromToken = function (armor) {
         var index = armor === null ? 0 : parseInt(armor);

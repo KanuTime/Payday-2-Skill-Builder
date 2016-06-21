@@ -1,5 +1,5 @@
-﻿import { BuildStatsComponent } from './build/build-stats/build-stats.component';
-import { BuildConfigurationComponent } from './build/build-configuration/build-configuration.component';
+﻿import { BuildStatsComponent } from './builds/build-stats/build-stats.component';
+import { BuildConfigurationComponent } from './builds/build-configuration/build-configuration.component';
 
 import {
     ArmorSelectionComponent,

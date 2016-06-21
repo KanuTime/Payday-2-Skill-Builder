@@ -19,8 +19,8 @@ export class Build implements Efficacious {
         this.buildProvider.updateUrl(this);
     }
 
-    allEffects(): Effect[] {
-        return this.armor.allEffects();
+    effects(): Effect[] {
+        return this.armor.effects();
     }
 
 }

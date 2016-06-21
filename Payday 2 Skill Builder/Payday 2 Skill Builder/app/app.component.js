@@ -12,7 +12,7 @@ var core_1 = require('@angular/core');
 var app_providers_1 = require('./app.providers');
 var app_directives_1 = require('./app.directives');
 var overlay_model_1 = require('./shared/overlay.model');
-var build_provider_1 = require('./build/shared/build.provider');
+var build_provider_1 = require('./builds/shared/build.provider');
 var AppComponent = (function () {
     function AppComponent(buildProvider) {
         this.overlay = new overlay_model_1.Overlay();

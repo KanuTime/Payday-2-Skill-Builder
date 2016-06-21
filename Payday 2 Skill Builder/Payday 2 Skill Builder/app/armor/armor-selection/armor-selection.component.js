@@ -19,7 +19,7 @@ var index_2 = require('../../shared/index');
 var ArmorSelectionComponent = (function (_super) {
     __extends(ArmorSelectionComponent, _super);
     function ArmorSelectionComponent(armorProvider) {
-        _super.call(this, armorProvider.get, armors());
+        _super.call(this, armorProvider.armors);
     }
     ArmorSelectionComponent = __decorate([
         core_1.Component({

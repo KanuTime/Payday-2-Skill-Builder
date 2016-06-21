@@ -9,7 +9,7 @@ export class ArmorParser {
     private armors: Armor[];
 
     constructor(armorProvider: ArmorProvider) {
-        this.armors = armorProvider.armors();
+        this.armors = armorProvider.armors;
     }   
 
     public fromToken(armor: string): Armor {

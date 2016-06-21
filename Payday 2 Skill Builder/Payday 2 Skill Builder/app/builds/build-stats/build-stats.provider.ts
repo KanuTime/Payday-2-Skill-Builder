@@ -12,8 +12,8 @@ export class BuildStatsProvider {
     public getBuildStats(build: Build): BuildStat[] {        
         return PROPERTIES.map(property => {
 
-            const totalValue = this.selectEffect(property, build.allEffects()).absolute;
-            const baseValue = this.selectEffect(property, build.armor.allEffects()).absolute;
+            const totalValue = this.selectEffect(property, build.effects()).absolute;
+            const baseValue = this.selectEffect(property, build.armor.effects()).absolute;
 
             return new BuildStat(
                 property.name,

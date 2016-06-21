@@ -1,16 +1,16 @@
-﻿import { BuildProvider } from './build/shared/build.provider';
-//import { BuildStatsProvider } from './build/build-stats/build-stats.provider';
+﻿import { BuildProvider } from './builds/shared/build.provider';
+import { BuildStatsProvider } from './builds/build-stats/build-stats.provider';
 
 import { ArmorProvider } from './armor/shared/armor.provider';
-//import { ArmorParser } from './build/shared/parser/armor.parser';
+import { ArmorParser } from './builds/shared/parser/armor.parser';
 
 export const PROVIDERS = [
     ArmorProvider,
-    //BuildStatsProvider,
+    BuildStatsProvider,
 
     // Build Parsing
     BuildProvider,
-    //ArmorParser,
+    ArmorParser,
 
     
 ];

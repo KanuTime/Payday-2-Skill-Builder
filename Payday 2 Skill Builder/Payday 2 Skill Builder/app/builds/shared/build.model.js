@@ -15,8 +15,8 @@ var Build = (function () {
         enumerable: true,
         configurable: true
     });
-    Build.prototype.allEffects = function () {
-        return this.armor.allEffects();
+    Build.prototype.effects = function () {
+        return this.armor.effects();
     };
     return Build;
 }());

@@ -5,8 +5,8 @@ import { DIRECTIVES }from './app.directives';
 
 import { Overlay } from './shared/overlay.model';
 
-import { Build } from './build/shared/build.model';
-import { BuildProvider } from './build/shared/build.provider';
+import { Build } from './builds/shared/build.model';
+import { BuildProvider } from './builds/shared/build.provider';
 
 
 @Component({

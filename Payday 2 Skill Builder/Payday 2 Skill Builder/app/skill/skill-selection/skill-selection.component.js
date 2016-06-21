@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var build_model_1 = require('../../build/shared/build.model');
+var build_model_1 = require('../../builds/shared/build.model');
 var index_1 = require('../index');
 var __1 = require('../..');
 var SkillSelectionComponent = (function () {
