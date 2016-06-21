@@ -12,7 +12,7 @@ import { Selection } from '../../shared/index';
 export class ArmorSelectionComponent extends Selection<Armor> {
     
     constructor(armorProvider: ArmorProvider) {
-        super(armorProvider.get armors());
+        super(armorProvider.armors());
     }
 
 }

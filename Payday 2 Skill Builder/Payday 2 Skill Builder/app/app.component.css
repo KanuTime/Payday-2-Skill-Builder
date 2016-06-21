@@ -11,10 +11,10 @@
 
 .backButton {
     position:absolute;
-    right:30px;
+    right:40px;
     bottom:20px;
     z-index:9999;
     color:deepskyblue;
-    font-size:200%;
+    font-size:250%;
     cursor:pointer;
 }
