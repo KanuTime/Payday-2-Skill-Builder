@@ -2,7 +2,7 @@
 
 import { Build } from '../../builds/shared/build.model';
 
-import { Skill } from '../index';
+import { Skill } from '../../model/skill/skill.model';
 import { Effect, PropertyProvider } from '../..';
 
 @Component({

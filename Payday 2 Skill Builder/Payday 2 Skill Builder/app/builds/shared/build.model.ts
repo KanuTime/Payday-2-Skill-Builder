@@ -3,15 +3,14 @@
 import {
     Armor,
     Effect,
-    Efficacious,
-    Skillset
+    Efficacious
 } from '../..';
 
 export class Build implements Efficacious {
 
     constructor(
         private _armor: Armor,
-        private _skillset: Skillset,
+        private _skillset: any,
         private buildProvider: BuildProvider
     ) { }
 
@@ -20,7 +19,7 @@ export class Build implements Efficacious {
     }
 
     get skillset() {
-        return this._skillset;
+        return null;
     }
 
     set armor(armor: Armor) {
@@ -28,7 +27,7 @@ export class Build implements Efficacious {
         this.buildProvider.updateUrl(this);
     }
 
-    set skillset(skillset: Skillset) {
+    set skillset(skillset: any) {
         this._skillset = skillset;
         this.buildProvider.updateUrl(this);
     }

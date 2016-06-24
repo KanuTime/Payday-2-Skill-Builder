@@ -4,7 +4,7 @@
     PropertyProvider
 } from '../..';
 
-export class Armor implements Efficacious {
+export class Armor {
 
     constructor(
         private _name: string,
@@ -17,7 +17,9 @@ export class Armor implements Efficacious {
         private _stamina: number,
         private _health: number,
         private _armorRecovery: number
-    ) { }
+    ) {
+        Object.freeze(this);
+    }
 
     get name(): string { return this._name; }
 

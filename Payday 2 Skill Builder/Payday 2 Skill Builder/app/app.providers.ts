@@ -4,7 +4,6 @@ import { BuildStatsProvider } from './builds/build-stats/build-stats.provider';
 import { ArmorProvider } from './armor/shared/armor.provider';
 import { ArmorParser } from './builds/shared/parser/armor.parser';
 
-import { SkillProvider } from './skill/shared/skill.provider';
 
 export const PROVIDERS = [
     ArmorProvider,
@@ -13,6 +12,4 @@ export const PROVIDERS = [
     // Build Parsing
     BuildProvider,
     ArmorParser,
-
-    SkillProvider
 ];

@@ -18,7 +18,7 @@ var Build = (function () {
     });
     Object.defineProperty(Build.prototype, "skillset", {
         get: function () {
-            return this._skillset;
+            return null;
         },
         set: function (skillset) {
             this._skillset = skillset;

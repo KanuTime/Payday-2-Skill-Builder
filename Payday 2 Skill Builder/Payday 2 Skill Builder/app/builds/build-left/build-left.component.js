@@ -12,7 +12,12 @@ var core_1 = require('@angular/core');
 var build_model_1 = require('../shared/build.model');
 var BuildLeftComponent = (function () {
     function BuildLeftComponent() {
+        this.container = new Container(42);
     }
+    BuildLeftComponent.prototype.doIt = function () {
+        alert(this.container.value);
+        this.container.value = 1;
+    };
     __decorate([
         core_1.Input(), 
         __metadata('design:type', build_model_1.Build)
@@ -29,4 +34,11 @@ var BuildLeftComponent = (function () {
     return BuildLeftComponent;
 }());
 exports.BuildLeftComponent = BuildLeftComponent;
+var Container = (function () {
+    function Container(value) {
+        this.value = value;
+        Object.freeze(this);
+    }
+    return Container;
+}());
 //# sourceMappingURL=build-left.component.js.map

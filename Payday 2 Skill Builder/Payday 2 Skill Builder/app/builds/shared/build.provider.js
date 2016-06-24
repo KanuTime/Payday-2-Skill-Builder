@@ -26,7 +26,7 @@ var BuildProvider = (function () {
     BuildProvider.prototype.fromUrl = function () {
         var armor = this.armorParser.fromToken(this.extractValueOfToken(ARMOR_TOKEN));
         // ...
-        return new build_model_1.Build(armor, this);
+        return new build_model_1.Build(armor, null, this);
     };
     BuildProvider.prototype.extractValueOfToken = function (token) {
         return decodeURIComponent((new RegExp('[?|&]' + token + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)

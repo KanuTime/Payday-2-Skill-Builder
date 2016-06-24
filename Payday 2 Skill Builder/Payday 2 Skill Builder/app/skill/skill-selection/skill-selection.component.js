@@ -10,13 +10,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var build_model_1 = require('../../builds/shared/build.model');
+var skill_model_1 = require('../../model/skill/skill.model');
 var index_1 = require('../index');
 var __1 = require('../..');
 var SkillSelectionComponent = (function () {
     function SkillSelectionComponent() {
     }
     SkillSelectionComponent.prototype.ngOnInit = function () {
-        this.skill = new index_1.Skill("Bla", "Lets you do something", [new __1.Effect(__1.PropertyProvider.ARMOR, 15, 50)], []);
+        this.skill = new skill_model_1.Skill("Bla", "Lets you do something", "", "", [new __1.Effect(__1.PropertyProvider.ARMOR, 15, 50)], []);
     };
     __decorate([
         core_1.Input(), 

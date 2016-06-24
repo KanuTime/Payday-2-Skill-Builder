@@ -25,7 +25,7 @@ export class BuildProvider {
     fromUrl(): Build {
         const armor: Armor = this.armorParser.fromToken(this.extractValueOfToken(ARMOR_TOKEN));
         // ...
-        return new Build(armor, this);
+        return new Build(armor, null, this);
     }
 
     private extractValueOfToken(token: string): string {

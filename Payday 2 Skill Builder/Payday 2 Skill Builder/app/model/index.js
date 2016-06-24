@@ -2,6 +2,5 @@
 function __export(m) {
     for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 }
-__export(require('./skill-detail/skill-detail.component'));
-__export(require('./skill-selection/skill-selection.component'));
+__export(require('./skill/index'));
 //# sourceMappingURL=index.js.map

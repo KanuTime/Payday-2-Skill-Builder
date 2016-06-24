@@ -9,13 +9,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var index_1 = require('../index');
+var skill_model_1 = require('../../model/skill/skill.model');
 var SkillDetailComponent = (function () {
     function SkillDetailComponent() {
     }
     __decorate([
         core_1.Input(), 
-        __metadata('design:type', index_1.Skill)
+        __metadata('design:type', skill_model_1.Skill)
     ], SkillDetailComponent.prototype, "skill", void 0);
     SkillDetailComponent = __decorate([
         core_1.Component({

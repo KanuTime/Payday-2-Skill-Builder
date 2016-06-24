@@ -12,17 +12,17 @@ var core_1 = require('@angular/core');
 var index_1 = require('../index');
 var ArmorProvider = (function () {
     function ArmorProvider() {
-        this.ALL = [
-            Armors.TWO_PIECE_SUIT,
-            Armors.LIGHTWEIGHT_BALLISTIC_VEST,
-            Armors.BALLISTIC_VEST,
-            Armors.HEAVY_BALLISTIC_VEST,
-            Armors.FLAK_JACKET,
-            Armors.COMBINED_TACTICAL_VEST
+        this._armors = [
+            TWO_PIECE_SUIT,
+            LIGHTWEIGHT_BALLISTIC_VEST,
+            BALLISTIC_VEST,
+            HEAVY_BALLISTIC_VEST,
+            FLAK_JACKET,
+            COMBINED_TACTICAL_VEST
         ];
     }
     Object.defineProperty(ArmorProvider.prototype, "armors", {
-        get: function () { return this.ALL; },
+        get: function () { return this._armors; },
         enumerable: true,
         configurable: true
     });
@@ -33,14 +33,11 @@ var ArmorProvider = (function () {
     return ArmorProvider;
 }());
 exports.ArmorProvider = ArmorProvider;
-var Armors;
-(function (Armors) {
-    Armors.TWO_PIECE_SUIT = new index_1.Armor("Two-piece Suit", 20, 30, 37, 10, 11, 21, 230, 3);
-    Armors.LIGHTWEIGHT_BALLISTIC_VEST = new index_1.Armor("Lightweight Ballistic Vest", 30, 26, 36, -20, 11, 20, 230, 3);
-    Armors.BALLISTIC_VEST = new index_1.Armor("Ballistic Vest", 40, 23, 35, -25, 12, 19, 230, 3);
-    Armors.HEAVY_BALLISTIC_VEST = new index_1.Armor("Heavy Ballistic Vest", 50, 21, 33, -30, 13, 18, 230, 3);
-    Armors.FLAK_JACKET = new index_1.Armor("Flak Jacket", 70, 18, 26, -35, 14, 17, 230, 3);
-    Armors.COMBINED_TACTICAL_VEST = new index_1.Armor("Combined Tactical Vest", 90, 12, 23, -40, 16, 16, 230, 3);
-    Armors.IMPROVED_COMBINED_TACTICAL_VEST = new index_1.Armor("Improved Combined Tactical Vest", 170, 1, 20, -50, 22, 14, 230, 3);
-})(Armors = exports.Armors || (exports.Armors = {}));
+var TWO_PIECE_SUIT = new index_1.Armor("Two-piece Suit", 20, 30, 37, 10, 11, 21, 230, 3);
+var LIGHTWEIGHT_BALLISTIC_VEST = new index_1.Armor("Lightweight Ballistic Vest", 30, 26, 36, -20, 11, 20, 230, 3);
+var BALLISTIC_VEST = new index_1.Armor("Ballistic Vest", 40, 23, 35, -25, 12, 19, 230, 3);
+var HEAVY_BALLISTIC_VEST = new index_1.Armor("Heavy Ballistic Vest", 50, 21, 33, -30, 13, 18, 230, 3);
+var FLAK_JACKET = new index_1.Armor("Flak Jacket", 70, 18, 26, -35, 14, 17, 230, 3);
+var COMBINED_TACTICAL_VEST = new index_1.Armor("Combined Tactical Vest", 90, 12, 23, -40, 16, 16, 230, 3);
+var IMPROVED_COMBINED_TACTICAL_VEST = new index_1.Armor("Improved Combined Tactical Vest", 170, 1, 20, -50, 22, 14, 230, 3);
 //# sourceMappingURL=armor.provider.js.map

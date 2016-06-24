@@ -11,6 +11,7 @@ var Armor = (function () {
         this._stamina = _stamina;
         this._health = _health;
         this._armorRecovery = _armorRecovery;
+        Object.freeze(this);
     }
     Object.defineProperty(Armor.prototype, "name", {
         get: function () { return this._name; },
