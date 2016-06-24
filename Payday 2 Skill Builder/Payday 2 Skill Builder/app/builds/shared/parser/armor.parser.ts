@@ -1,7 +1,6 @@
 ﻿import { Injectable } from '@angular/core';
 
-import { Armor } from '../../../armor/shared/armor.model';
-import { ArmorProvider } from '../../../armor/shared/armor.provider';
+import { Armor, ArmorProvider } from '../../../armor/index';
 
 @Injectable()
 export class ArmorParser {

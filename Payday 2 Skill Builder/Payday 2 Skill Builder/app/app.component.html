@@ -16,7 +16,7 @@
     </tr>
     <tr>
         <td>
-            <skill-selection [build]="build"></skill-selection>
+
         </td>
     </tr>
 </table>
@@ -26,6 +26,9 @@
                      [selected]="build.armor"
                      (selection)="build.armor = $event">
     </armor-selection>
+    <skill-selection *ngIf="overlay.showSkillset"
+                     [build]="build">
+    </skill-selection>
     <span class="backButton" (click)="overlay.setEmpty()">Back</span>
 </div>
     

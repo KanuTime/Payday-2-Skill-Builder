@@ -34,6 +34,9 @@
     <Content Include="app\builds\build-left\build-left.component.html" />
     <Content Include="app\builds\build-stats\build-stats.component.css" />
     <Content Include="app\builds\build-stats\build-stats.component.html" />
+    <Content Include="app\skill\skill-detail\skill-detail.component.css" />
+    <Content Include="app\skill\skill-detail\skill-detail.component.html" />
+    <Content Include="app\skill\skill-selection\skill-selection.component.html" />
     <Content Include="index.html" />
     <Content Include="styles.css" />
     <Content Include="systemjs.config.js" />
@@ -52,6 +55,7 @@
     <TypeScriptCompile Include="app\builds\build-left\build-left.component.ts" />
     <TypeScriptCompile Include="app\builds\build-stats\build-stat.model.ts" />
     <TypeScriptCompile Include="app\builds\build-stats\build-stats.provider.ts" />
+    <TypeScriptCompile Include="app\builds\index.ts" />
     <TypeScriptCompile Include="app\builds\shared\parser\armor.parser.ts" />
     <TypeScriptCompile Include="app\default\default.component.ts" />
     <TypeScriptCompile Include="app\effect\efficacious.model.ts" />
@@ -71,6 +75,8 @@
     <TypeScriptCompile Include="app\skill\index.ts" />
     <TypeScriptCompile Include="app\skill\shared\skill.model.ts" />
     <TypeScriptCompile Include="app\skill\shared\skill.provider.ts" />
+    <TypeScriptCompile Include="app\skill\shared\skillset.model.ts" />
+    <TypeScriptCompile Include="app\skill\skill-detail\skill-detail.component.ts" />
     <TypeScriptCompile Include="app\skill\skill-selection\skill-selection.component.ts" />
   </ItemGroup>
   <ItemGroup>

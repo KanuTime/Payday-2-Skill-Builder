@@ -1,12 +1,17 @@
-﻿import { Armor } from '../../armor/shared/armor.model';
-import { Effect } from '../../effect/effect.model';
-import { Efficacious } from '../../effect/efficacious.model';
-import { BuildProvider } from './build.provider';
+﻿import { BuildProvider } from '../index';
+
+import {
+    Armor,
+    Effect,
+    Efficacious,
+    Skillset
+} from '../..';
 
 export class Build implements Efficacious {
 
     constructor(
         private _armor: Armor,
+        private _skillset: Skillset,
         private buildProvider: BuildProvider
     ) { }
 
@@ -14,13 +19,22 @@ export class Build implements Efficacious {
         return this._armor;
     }
 
+    get skillset() {
+        return this._skillset;
+    }
+
     set armor(armor: Armor) {
         this._armor = armor;
         this.buildProvider.updateUrl(this);
     }
 
+    set skillset(skillset: Skillset) {
+        this._skillset = skillset;
+        this.buildProvider.updateUrl(this);
+    }
+
     effects(): Effect[] {
-        return this.armor.effects();
+        return this.armor.effects();//.concat(this.skillset.effects());
     }
 
 }

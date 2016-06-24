@@ -9,20 +9,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var build_model_1 = require('../shared/build.model');
+var index_1 = require('../index');
 var build_left_component_1 = require('../build-left/build-left.component');
 var build_right_component_1 = require('../build-right/build-right.component');
-var overlay_model_1 = require('../../shared/overlay.model');
+var __1 = require('../..');
 var BuildConfigurationComponent = (function () {
     function BuildConfigurationComponent() {
     }
     __decorate([
         core_1.Input(), 
-        __metadata('design:type', build_model_1.Build)
+        __metadata('design:type', index_1.Build)
     ], BuildConfigurationComponent.prototype, "build", void 0);
     __decorate([
         core_1.Input(), 
-        __metadata('design:type', overlay_model_1.Overlay)
+        __metadata('design:type', __1.Overlay)
     ], BuildConfigurationComponent.prototype, "overlay", void 0);
     BuildConfigurationComponent = __decorate([
         core_1.Component({

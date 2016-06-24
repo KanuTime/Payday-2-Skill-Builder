@@ -1,7 +1,8 @@
 "use strict";
 var Build = (function () {
-    function Build(_armor, buildProvider) {
+    function Build(_armor, _skillset, buildProvider) {
         this._armor = _armor;
+        this._skillset = _skillset;
         this.buildProvider = buildProvider;
     }
     Object.defineProperty(Build.prototype, "armor", {
@@ -15,8 +16,19 @@ var Build = (function () {
         enumerable: true,
         configurable: true
     });
+    Object.defineProperty(Build.prototype, "skillset", {
+        get: function () {
+            return this._skillset;
+        },
+        set: function (skillset) {
+            this._skillset = skillset;
+            this.buildProvider.updateUrl(this);
+        },
+        enumerable: true,
+        configurable: true
+    });
     Build.prototype.effects = function () {
-        return this.armor.effects();
+        return this.armor.effects(); //.concat(this.skillset.effects());
     };
     return Build;
 }());

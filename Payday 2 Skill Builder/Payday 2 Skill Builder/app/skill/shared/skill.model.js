@@ -1,12 +1,18 @@
 "use strict";
 var Skill = (function () {
-    function Skill(_name, _effectsBasic, _effectsAced) {
+    function Skill(_name, _description, _effectsBasic, _effectsAced) {
         this._name = _name;
+        this._description = _description;
         this._effectsBasic = _effectsBasic;
         this._effectsAced = _effectsAced;
     }
     Object.defineProperty(Skill.prototype, "name", {
         get: function () { return this._name; },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Skill.prototype, "description", {
+        get: function () { return this._description; },
         enumerable: true,
         configurable: true
     });

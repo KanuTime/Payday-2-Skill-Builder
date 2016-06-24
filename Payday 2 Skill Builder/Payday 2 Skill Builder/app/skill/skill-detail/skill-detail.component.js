@@ -9,23 +9,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var index_1 = require('../../../armor/index');
-var ArmorParser = (function () {
-    function ArmorParser(armorProvider) {
-        this.armors = armorProvider.armors;
+var index_1 = require('../index');
+var SkillDetailComponent = (function () {
+    function SkillDetailComponent() {
     }
-    ArmorParser.prototype.fromToken = function (armor) {
-        var index = armor === null ? 0 : parseInt(armor);
-        return this.armors[index >= 0 && index < this.armors.length ? index : 0];
-    };
-    ArmorParser.prototype.toToken = function (armor) {
-        return "" + this.armors.indexOf(armor);
-    };
-    ArmorParser = __decorate([
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [index_1.ArmorProvider])
-    ], ArmorParser);
-    return ArmorParser;
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', index_1.Skill)
+    ], SkillDetailComponent.prototype, "skill", void 0);
+    SkillDetailComponent = __decorate([
+        core_1.Component({
+            selector: 'skill-detail',
+            templateUrl: 'skill-detail.component.html',
+            styleUrls: ['skill-detail.component.css'],
+            moduleId: module.id
+        }), 
+        __metadata('design:paramtypes', [])
+    ], SkillDetailComponent);
+    return SkillDetailComponent;
 }());
-exports.ArmorParser = ArmorParser;
-//# sourceMappingURL=armor.parser.js.map
+exports.SkillDetailComponent = SkillDetailComponent;
+//# sourceMappingURL=skill-detail.component.js.map

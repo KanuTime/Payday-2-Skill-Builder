@@ -16,7 +16,7 @@ var SkillSelectionComponent = (function () {
     function SkillSelectionComponent() {
     }
     SkillSelectionComponent.prototype.ngOnInit = function () {
-        this.skill = new index_1.Skill("Bla", [new __1.Effect(__1.PropertyProvider.ARMOR, 15, 50)], []);
+        this.skill = new index_1.Skill("Bla", "Lets you do something", [new __1.Effect(__1.PropertyProvider.ARMOR, 15, 50)], []);
     };
     __decorate([
         core_1.Input(), 
@@ -26,7 +26,8 @@ var SkillSelectionComponent = (function () {
         core_1.Component({
             selector: 'skill-selection',
             templateUrl: 'skill-selection.component.html',
-            moduleId: module.id
+            moduleId: module.id,
+            directives: [index_1.SkillDetailComponent]
         }), 
         __metadata('design:paramtypes', [])
     ], SkillSelectionComponent);
