@@ -9,22 +9,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var SkillTreeComponent = (function () {
-    function SkillTreeComponent() {
+var DefaultSkillBuildProvider = (function () {
+    function DefaultSkillBuildProvider(Medic // TODO add more
+        ) {
+        this.SKILL_CLASS = new SkillClassModel("Mastermind", Medic.getSkillTree(), Medic.getSkillTree(), // TODO add more
+        Medic.getSkillTree());
     }
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', String)
-    ], SkillTreeComponent.prototype, "value", void 0);
-    SkillTreeComponent = __decorate([
-        core_1.Component({
-            selector: 'skill-tree',
-            templateUrl: 'skill-tree.component.html',
-            moduleId: module.id
-        }), 
-        __metadata('design:paramtypes', [])
-    ], SkillTreeComponent);
-    return SkillTreeComponent;
+    DefaultSkillBuildProvider.prototype.getSkillClass = function () {
+        return this.SKILL_CLASS;
+    };
+    DefaultSkillBuildProvider = __decorate([
+        core_1.Injectable(), 
+        __metadata('design:paramtypes', [Object])
+    ], DefaultSkillBuildProvider);
+    return DefaultSkillBuildProvider;
 }());
-exports.SkillTreeComponent = SkillTreeComponent;
-//# sourceMappingURL=skill-tree.component.js.map
+exports.DefaultSkillBuildProvider = DefaultSkillBuildProvider;
+//# sourceMappingURL=skill-build.provider.js.map

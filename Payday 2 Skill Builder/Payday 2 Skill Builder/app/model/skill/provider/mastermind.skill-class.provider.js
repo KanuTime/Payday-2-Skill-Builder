@@ -9,23 +9,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var index_1 = require('../../index');
-var index_2 = require('./index');
+var skill_class_1 = require('../skill-class');
+var mastermind_1 = require('./mastermind');
 var MastermindSkillClassProvider = (function () {
-    function MastermindSkillClassProvider(medic) {
-        this.instance = new index_1.SkillClass("Mastermind", medic.getSkillTree(), medic.getSkillTree(), // TODO
-        medic.getSkillTree() // TODO
-        );
+    function MastermindSkillClassProvider(Medic // TODO add more
+        ) {
+        this.SKILL_CLASS = new skill_class_1.SkillClassModel("Mastermind", Medic.getSkillTree(), Medic.getSkillTree(), // TODO add more
+        Medic.getSkillTree());
     }
     MastermindSkillClassProvider.prototype.getSkillClass = function () {
-        return this.instance;
+        return this.SKILL_CLASS;
     };
     MastermindSkillClassProvider = __decorate([
         core_1.Injectable(), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof index_2.MastermindMedicProvider !== 'undefined' && index_2.MastermindMedicProvider) === 'function' && _a) || Object])
+        __metadata('design:paramtypes', [mastermind_1.MedicSkillTreeProvider])
     ], MastermindSkillClassProvider);
     return MastermindSkillClassProvider;
-    var _a;
 }());
 exports.MastermindSkillClassProvider = MastermindSkillClassProvider;
-//# sourceMappingURL=mastermind.provider.js.map
+//# sourceMappingURL=mastermind.skill-class.provider.js.map

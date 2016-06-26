@@ -1,0 +1,11 @@
+﻿<table>
+    <tr>
+        <td *ngFor="let skillClass in build.classes"
+            (click)="selectClass(skillClass)">
+            {{skillClass.name}}
+        </td>
+    </tr>
+</table>
+<skill-class [skillClass]="selectedClass">
+
+</skill-class>

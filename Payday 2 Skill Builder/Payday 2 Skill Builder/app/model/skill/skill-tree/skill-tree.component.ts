@@ -1,7 +1,7 @@
 ﻿import { Component, Input } from '@angular/core';
 
-import { SkillTreeModel, SkillTreeConfig } from './index';
-import { SkillComponent, SkillPointsConfig, SkillInfoConfig } from '../index';
+import { SkillTreeConfig } from './index';
+import { SkillComponent, SkillInfoConfig } from '../index';
 
 @Component({
     selector: 'skill-tree',

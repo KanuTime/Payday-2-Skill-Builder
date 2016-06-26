@@ -1,2 +1,1 @@
-﻿export * from './mastermind.provider';
-export * from './mastermind.medic.provider';
+﻿export * from './medic.skill-tree.provider';

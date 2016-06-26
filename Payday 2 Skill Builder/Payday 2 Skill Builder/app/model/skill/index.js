@@ -2,10 +2,10 @@
 function __export(m) {
     for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 }
-__export(require('./skilltree.model'));
-__export(require('./skillclass.model'));
-__export(require('./skillset.model'));
-__export(require('./skill-points/skill-points.config'));
+__export(require('./skill-points'));
 __export(require('./skill-info/skill-info.config'));
 __export(require('./skill'));
+__export(require('./skill-tree'));
+__export(require('./skill-class'));
+__export(require('./skill-build'));
 //# sourceMappingURL=index.js.map

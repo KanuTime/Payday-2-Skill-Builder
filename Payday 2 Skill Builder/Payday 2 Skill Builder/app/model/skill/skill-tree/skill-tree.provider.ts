@@ -1,4 +1,4 @@
-﻿import { SkillTreeModel } from '../skill-tree';
+﻿import { SkillTreeModel } from './index';
 
 export interface SkillTreeProvider {
 
