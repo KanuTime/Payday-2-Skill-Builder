@@ -1,26 +1,39 @@
 "use strict";
-var index_1 = require('./index');
 // Immutable
 var Skill = (function () {
-    function Skill(name, description, image, basic, aced) {
+    function Skill(name, basicDescription, acedDescription, image, basicEffects, acedEffects) {
         this.name = name;
-        this.description = description;
+        this.basicDescription = basicDescription;
+        this.acedDescription = acedDescription;
         this.image = image;
-        this.basic = basic;
-        this.aced = aced;
+        this.basicEffects = basicEffects;
+        this.acedEffects = acedEffects;
         Object.freeze(this);
     }
+    Skill.prototype.getDescription = function (state) {
+        switch (state) {
+            case SkillState.ACED: return this.acedDescription;
+            case SkillState.BASIC: return this.basicDescription;
+            default: return "";
+        }
+    };
     Skill.prototype.getImage = function (state) {
         return this.image; // TODO multiple possible images (empy, basic, aced)
     };
     Skill.prototype.getEffects = function (state) {
         switch (state) {
-            case index_1.SkillState.ACED: return this.aced;
-            case index_1.SkillState.BASIC: return this.basic;
+            case SkillState.ACED: return this.acedEffects;
+            case SkillState.BASIC: return this.basicEffects;
             default: return [];
         }
     };
     return Skill;
 }());
 exports.Skill = Skill;
+(function (SkillState) {
+    SkillState[SkillState["EMPTY"] = 0] = "EMPTY";
+    SkillState[SkillState["BASIC"] = 1] = "BASIC";
+    SkillState[SkillState["ACED"] = 2] = "ACED";
+})(exports.SkillState || (exports.SkillState = {}));
+var SkillState = exports.SkillState;
 //# sourceMappingURL=skill.model.js.map
