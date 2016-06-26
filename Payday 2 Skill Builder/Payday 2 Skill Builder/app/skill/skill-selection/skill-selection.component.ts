@@ -2,7 +2,7 @@
 
 import { Build } from '../../builds/shared/build.model';
 
-import { Skill } from '../../model/skill/skill.model';
+import { SkillModel } from '../../model/skill/skill/skill.model';
 
 import { SkillDetailComponent } from '../index';
 import { Effect, PropertyProvider } from '../..';
@@ -16,10 +16,10 @@ import { Effect, PropertyProvider } from '../..';
 export class SkillSelectionComponent implements OnInit {
 
     @Input() build: Build;
-    private skill: Skill
+    private skill: SkillModel
 
     ngOnInit() {
-        this.skill = new Skill("Bla", "Lets you do something", "", "", [ new Effect(PropertyProvider.ARMOR, 15, 50) ], []);
+        this.skill = new SkillModel("Bla", "Lets you do something", "", "", [ new Effect(PropertyProvider.ARMOR, 15, 50) ], []);
     }
 
 }

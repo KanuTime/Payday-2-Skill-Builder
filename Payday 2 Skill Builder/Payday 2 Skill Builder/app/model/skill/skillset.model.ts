@@ -1,7 +1,7 @@
-﻿import { Skill, SkillClass } from './index';
+﻿import { SkillModel, SkillClass } from './index';
 
 // Immutable
-export class Skillset {
+export class SkillSet {
 
     constructor(
 
@@ -23,7 +23,7 @@ export class Skillset {
         ];
     }
 
-    getSkills(): Skill[] {
+    getSkills(): SkillModel[] {
         return this.mastermind.getSkills()
             .concat(this.enforcer.getSkills())
             .concat(this.technician.getSkills())

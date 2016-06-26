@@ -15,7 +15,7 @@ var SkillDetailComponent = (function () {
     }
     __decorate([
         core_1.Input(), 
-        __metadata('design:type', skill_model_1.Skill)
+        __metadata('design:type', (typeof (_a = typeof skill_model_1.SkillModel !== 'undefined' && skill_model_1.SkillModel) === 'function' && _a) || Object)
     ], SkillDetailComponent.prototype, "skill", void 0);
     SkillDetailComponent = __decorate([
         core_1.Component({
@@ -27,6 +27,7 @@ var SkillDetailComponent = (function () {
         __metadata('design:paramtypes', [])
     ], SkillDetailComponent);
     return SkillDetailComponent;
+    var _a;
 }());
 exports.SkillDetailComponent = SkillDetailComponent;
 //# sourceMappingURL=skill-detail.component.js.map

@@ -1,4 +1,4 @@
-﻿import { Skill, SkillTree } from './index';
+﻿import { SkillModel, SkillTree } from './index';
 
 // Immutable
 export class SkillClass {
@@ -13,7 +13,7 @@ export class SkillClass {
 
     ) { Object.freeze(this); }
 
-    getSkills(): Skill[] {
+    getSkills(): SkillModel[] {
         return this.left.getSkills()
             .concat(this.middle.getSkills())
             .concat(this.right.getSkills());
